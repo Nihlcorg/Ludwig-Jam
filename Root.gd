@@ -10,7 +10,7 @@ onready var billiard = $Billiard
 onready var goalPlayer = $GoalPlayer
 onready var fallPlayer = $FallPlayer
 onready var contact = $Contact
-onready var active_level = levels[COLLISION.m]
+onready var active_level = levels[COLLISION.a]
 onready var cage = $cage
 
 #var fall_sound = preload('res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3')
@@ -21,7 +21,7 @@ func _ready():
 #	contact.fallStreak = 5
 	contact.link = billiard
 	contact.connect('slap', billiard, 'apply_central_impulse')
-	levels[COLLISION.m].arrive()
+	levels[COLLISION.a].arrive()
 	for level in levels:
 		level.connect('fall', self, 'move_down')
 		level.connect('goal', self, 'move_up')

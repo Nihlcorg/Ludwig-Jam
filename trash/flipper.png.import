@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flipper.png-5bafb2f1027bb6aa1e6541ca433ed8c9.stex"
+path="res://.import/flipper.png-601afbbe5b381cf4cd5de1d55c4a4d5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://flipper.png"
-dest_files=[ "res://.import/flipper.png-5bafb2f1027bb6aa1e6541ca433ed8c9.stex" ]
+source_file="res://trash/flipper.png"
+dest_files=[ "res://.import/flipper.png-601afbbe5b381cf4cd5de1d55c4a4d5c.stex" ]
 
 [params]
 

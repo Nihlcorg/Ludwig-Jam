@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Flippers.gd" type="Script" id=1]
+[ext_resource path="res://trash/Flippers.gd" type="Script" id=1]
 [ext_resource path="res://trash/Flipper.gd" type="Script" id=2]
-[ext_resource path="res://LFlip.gd" type="Script" id=3]
-[ext_resource path="res://flipper.png" type="Texture" id=4]
+[ext_resource path="res://trash/LFlip.gd" type="Script" id=3]
+[ext_resource path="res://trash/flipper.png" type="Texture" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
