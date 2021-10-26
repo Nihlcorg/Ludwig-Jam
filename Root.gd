@@ -63,13 +63,17 @@ func get_level(lvlName):
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_focus_next"):
 #		print('point')
-#		var pos = active_level.checkpoint.global_position
-#		cage.global_position = billiard.global_position
-#		yield(get_tree().create_timer(0.25), "timeout")
-#		billiard.global_position = pos
-#		cage.global_position = Vector2()
-		get_tree().reload_current_scene()
+		checkpoint()	
+#		cheat()
+
 
 func checkpoint():
 	print('point')
+	var pos = active_level.checkpoint.global_position
+	cage.global_position = billiard.global_position
+	yield(get_tree().create_timer(0.25), "timeout")
+	billiard.global_position = pos
+	cage.global_position = Vector2()
 	
+func cheat():
+	get_tree().reload_current_scene()
