@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_cartoon_pop_high_pitched_sharp_001_73438.mp3-9ff7935c32f2917194e89905bd3b4fca.mp3str"
+
+[deps]
+
+source_file="res://sounds/zapsplat_cartoon_pop_high_pitched_sharp_001_73438.mp3"
+dest_files=[ "res://.import/zapsplat_cartoon_pop_high_pitched_sharp_001_73438.mp3-9ff7935c32f2917194e89905bd3b4fca.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

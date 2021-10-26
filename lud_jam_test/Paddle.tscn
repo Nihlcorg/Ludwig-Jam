@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://trash/Paddle.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 134.848, 22.764 )
+
+[node name="Paddle" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 524288
+mode = 2
+physics_material_override = SubResource( 1 )
+continuous_cd = 1
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.314988, 0 )
+scale = Vector2( 2.10443, 0.344971 )
+texture = ExtResource( 1 )

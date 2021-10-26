@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://level.gd" type="Script" id=1]
+[ext_resource path="res://Pit.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=28]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=29]
+radius = 25.1965
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=30]
+radius = 16.6305
+
+[node name="level" type="Sprite" groups=[
+"levels",
+]]
+z_index = -1
+centered = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 28 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2( 91.7626, 37.4177 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+rotation = -1.71391
+shape = SubResource( 29 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="." groups=[
+"pits",
+]]
+position = Vector2( 47.2177, 98.8898 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pit"]
+shape = SubResource( 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="."]
+
+[connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="Pit" to="Pit" method="_on_Pit_body_entered"]

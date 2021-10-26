@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3-70c00c236a016d3b7f995a8608719b05.mp3str"
+
+[deps]
+
+source_file="res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3"
+dest_files=[ "res://.import/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3-70c00c236a016d3b7f995a8608719b05.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/326143__mackaffee__fart.mp3-1575054d056de6262ac61b3c170d2cb3.mp3str"
+
+[deps]
+
+source_file="res://sounds/326143__mackaffee__fart.mp3"
+dest_files=[ "res://.import/326143__mackaffee__fart.mp3-1575054d056de6262ac61b3c170d2cb3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

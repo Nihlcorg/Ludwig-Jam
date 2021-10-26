@@ -1,0 +1,1954 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://levels/a.png" type="Texture" id=1]
+[ext_resource path="res://level.gd" type="Script" id=2]
+[ext_resource path="res://levels/b.png" type="Texture" id=3]
+[ext_resource path="res://levels/f.png" type="Texture" id=4]
+[ext_resource path="res://Pit.gd" type="Script" id=5]
+[ext_resource path="res://Billiard.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Root.gd" type="Script" id=7]
+[ext_resource path="res://levels/d.png" type="Texture" id=8]
+[ext_resource path="res://Contact.tscn" type="PackedScene" id=9]
+[ext_resource path="res://levels/e.png" type="Texture" id=10]
+[ext_resource path="res://Flipper.tscn" type="PackedScene" id=11]
+[ext_resource path="res://levels/c.png" type="Texture" id=12]
+[ext_resource path="res://levels/g.png" type="Texture" id=13]
+[ext_resource path="res://levels/h.png" type="Texture" id=14]
+[ext_resource path="res://sounds/music_zapsplat_winter_dance.mp3" type="AudioStream" id=15]
+[ext_resource path="res://sounds/zapsplat_cartoon_flutter_delicate_64209.mp3" type="AudioStream" id=16]
+[ext_resource path="res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3" type="AudioStream" id=17]
+[ext_resource path="res://levels/i.png" type="Texture" id=18]
+[ext_resource path="res://levels/q.png" type="Texture" id=19]
+[ext_resource path="res://levels/j.png" type="Texture" id=20]
+[ext_resource path="res://levels/k.png" type="Texture" id=21]
+[ext_resource path="res://levels/credits.png" type="Texture" id=22]
+[ext_resource path="res://levels/l.png" type="Texture" id=23]
+[ext_resource path="res://levels/m.png" type="Texture" id=24]
+
+[sub_resource type="PhysicsMaterial" id=25]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=26]
+radius = 16.6266
+height = 16.2588
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 18.2101
+height = 24.2873
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 20.9376
+
+[sub_resource type="PhysicsMaterial" id=4]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 11.6789
+height = 12.1862
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 17.6331
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 16.6305
+
+[sub_resource type="PhysicsMaterial" id=8]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 21.1314
+height = 22.5735
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 16.6305
+
+[sub_resource type="PhysicsMaterial" id=11]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 18.2101
+height = 0.0
+
+[sub_resource type="PhysicsMaterial" id=13]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 23.2252
+height = 12.1862
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 16.6305
+
+[sub_resource type="PhysicsMaterial" id=16]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=17]
+radius = 27.2169
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 16.6305
+
+[sub_resource type="PhysicsMaterial" id=22]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=23]
+radius = 19.2702
+height = 11.5343
+
+[sub_resource type="CircleShape2D" id=24]
+radius = 16.6305
+
+[sub_resource type="CircleShape2D" id=27]
+radius = 14.7823
+
+[sub_resource type="PhysicsMaterial" id=28]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=29]
+radius = 25.1965
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=30]
+radius = 16.6305
+
+[sub_resource type="PhysicsMaterial" id=19]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 11.6789
+height = 12.1862
+
+[sub_resource type="CircleShape2D" id=21]
+radius = 16.6305
+
+[node name="PongRoot" type="Node"]
+script = ExtResource( 7 )
+
+[node name="Billiard" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1755.29, 670.326 )
+collision_layer = 524288
+collision_mask = 524287
+gravity_scale = 10.0
+continuous_cd = 2
+
+[node name="Camera2D" type="Camera2D" parent="Billiard"]
+rotation = 0.610865
+current = true
+zoom = Vector2( 0.75, 0.75 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Contact" parent="." instance=ExtResource( 9 )]
+
+[node name="credits" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1491.69, 962.683 )
+z_index = -1
+texture = ExtResource( 22 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 0
+
+[node name="Walls" type="StaticBody2D" parent="credits"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 25 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 0.41745, 533.17, 1.20388, 1.40324, 600.712, 1.30808, 600.473, 538.571, 636.494, 539.631, 639.411, -33.6844, -38.4087, -32.8907, -33.1273, 533.159 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( -0.000274658, 528.93, 0.572708, 1042.25, 600.483, 1042.41, 600, 533.17, 637, 532.17, 636, 1086.67, -45, 1084.67, -33.881, 524.178 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 570.295, 131.514, 484.875, 148.976, 373.498, 162.662, 176.407, 165.216, 175.565, 171.81, 374.913, 168.325, 488.178, 155.111, 572.655, 137.649 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 95.9986, 191.45, 77.1211, 206.552, 83.7282, 233.452, 89.3915, 239.116, 101.662, 245.723, 123.843, 245.723, 121.011, 237.7, 100.718, 238.172, 87.5037, 228.261, 83.7282, 209.856, 99.7741, 196.641 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 173.436, 270.648, 232.126, 258.98, 335.363, 271.355, 368.244, 268.526, 424.459, 264.284, 478.552, 273.123, 490.22, 301.053, 500.473, 322.267, 496.23, 336.762, 469.714, 354.086, 428.701, 358.329, 380.972, 345.601, 347.738, 337.469, 317.332, 328.63, 287.634, 331.105, 251.925, 342.773, 230.004, 348.783, 190.406, 343.833, 176.618, 339.237, 159.647, 323.327, 151.515, 302.468, 159.647, 284.083 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 35.0305, 351.671, 25.6867, 411.071, 32.3609, 411.405, 48.2121, 404.898, 59.8919, 404.063, 72.0723, 405.231, 74.5752, 402.061, 71.4049, 397.055, 60.8931, 395.387, 49.7138, 397.222, 35.1974, 401.894, 39.2019, 384.541, 42.8727, 365.353, 42.8727, 358.512, 40.203, 349.335 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 177.161, 583.346, 177.371, 571.153, 180.314, 572.624, 182.206, 575.147, 190.825, 567.999, 197.973, 566.528, 206.172, 566.738, 211.217, 572.834, 216.893, 572.204, 217.313, 565.056, 221.097, 561.692, 227.194, 562.954, 226.984, 553.494, 228.876, 547.818, 233.921, 545.085, 237.915, 549.499, 238.756, 558.329, 238.756, 585.238, 233.711, 586.078, 232.66, 581.664, 227.194, 585.868, 224.671, 581.664, 221.728, 583.135, 216.473, 584.607, 216.473, 590.493, 209.115, 591.334, 206.172, 578.721, 201.126, 572.624, 194.399, 574.726, 189.774, 578.931, 185.149, 585.658, 181.155, 587.55 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 108.245, 626.667, 118.936, 647.826, 125.841, 647.826, 130.741, 639.808, 135.975, 650.165, 141.988, 650.276, 155.574, 614.64, 153.236, 611.299, 147.89, 614.195, 138.202, 638.917, 133.191, 628.783, 127.4, 629.34, 122.5, 638.138, 113.368, 619.206, 108.914, 621.545 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 20.9388, 737.102, 20.7813, 728.598, 22.9861, 717.574, 27.3959, 705.762, 33.538, 696.785, 37.4752, 698.045, 40.3101, 704.659, 40.94, 711.747, 48.972, 703.242, 56.2166, 696.785, 63.3036, 694.58, 67.7133, 694.58, 72.753, 699.305, 75.4304, 710.802, 76.5328, 722.771, 78.1077, 731.118, 74.3279, 732.85, 70.8631, 732.063, 69.7607, 717.101, 67.5558, 704.187, 63.3036, 700.565, 57.4765, 703.242, 50.2319, 710.014, 44.4048, 718.204, 39.2076, 725.291, 36.6878, 724.818, 35.5854, 713.164, 33.6955, 709.227, 28.9708, 719.306, 27.0809, 727.968, 28.4983, 735.843, 27.8683, 738.677, 24.4036, 739.15 )
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 18.0588, 752.653, 65.4885, 750.058, 97.1083, 749.822, 116.335, 749.898, 132.74, 752.417, 157.044, 755.485, 174.506, 755.249, 194.327, 759.732, 230.195, 766.339, 257.567, 767.283, 287.566, 768.448, 318.591, 772.228, 350.247, 772.543, 397.809, 773.961, 438.716, 768.5, 481.378, 760.762, 511.538, 754.412, 535.746, 750.047, 547.255, 747.07, 552.216, 751.634, 546.858, 755.603, 503.601, 763.937, 475.028, 769.691, 448.836, 773.858, 417.694, 779.133, 393.083, 779.467, 351.099, 778.799, 317.935, 777.461, 287.559, 774.226, 268.688, 773.314, 230.314, 772.893, 191.789, 765.163, 172.586, 761.256, 146.365, 759.865, 114.625, 755.232, 69.5, 755.795, 32.9375, 759.107, 17.5625, 759.92 )
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 434.267, 855.184, 434.862, 844.27, 438.632, 831.968, 443.99, 828.452, 449.234, 827.89, 454.103, 837.254, 459.347, 832.759, 465.715, 830.325, 472.27, 829.763, 478.263, 829.95, 480.511, 829.013, 478.451, 820.96, 482.941, 817.94, 486.611, 816.105, 494.745, 841, 504.858, 831.448, 509.728, 830.699, 508.042, 819.836, 511.975, 812.719, 517.407, 809.161, 524.524, 810.285, 530.704, 817.027, 534.263, 822.833, 542.129, 818.9, 541.942, 805.977, 546.436, 800.733, 552.242, 801.669, 555.614, 806.539, 559.921, 804.104, 558.797, 795.863, 562.731, 791.743, 570.409, 790.807, 574.342, 794.365, 581.647, 795.114, 586.329, 805.228, 588.202, 818.151, 583.707, 832.759, 576.215, 835.569, 569.848, 834.07, 564.978, 827.515, 550.37, 832.01, 531.453, 839.689, 505.795, 847.368, 492.685, 853.923, 471.147, 857.669, 462.719, 856.358, 452.23, 857.669, 436.311, 858.98 )
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 273.984, 866.463, 266.399, 869.554, 261.904, 874.61, 258.467, 883.093, 257.23, 889.722, 258.379, 898.031, 262.268, 902.274, 269.958, 907.489, 280.122, 909.521, 291.613, 910.759, 296.651, 910.759, 295.325, 904.837, 291.436, 902.45, 284.984, 902.097, 274.554, 901.213, 268.102, 898.296, 263.947, 892.904, 264.655, 884.684, 267.395, 878.586, 271.726, 874.52, 278.885, 871.161 )
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 404.986, 931.194, 411.728, 932.224, 411.166, 958.07, 441.507, 957.883, 442.069, 965.936, 411.166, 967.06, 402.457, 958.819 )
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="credits/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 138.096, 1032.07, 108.803, 1026.72, 79.8249, 1010.65, 53.9966, 990.179, 38.5625, 968.76, 41.0824, 950.491, 55.5715, 933.167, 110.063, 924.978, 189.123, 929.388, 269.128, 929.073, 301.256, 925.608, 343.463, 925.293, 366.772, 935.687, 374.331, 956.161, 375.276, 977.895, 358.897, 1004.04, 332.439, 1023.25, 295.586, 1031.44, 258.419, 1030.81, 213.377, 1031.76 )
+
+[node name="Goal" type="Area2D" parent="credits"]
+position = Vector2( 95.0662, 108.208 )
+rotation = 1.28107
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="credits/Goal"]
+rotation = -1.71391
+shape = SubResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="credits" groups=[
+"checkpoints",
+]]
+position = Vector2( 524.101, 100.097 )
+
+[node name="a" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1369.05, 881.13 )
+z_index = -1
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 1
+
+[node name="Walls" type="StaticBody2D" parent="a"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="a/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+polygon = PoolVector2Array( 145.961, 248.431, 0.624847, 254.425, 1.37399, 1.2107, 1042.7, 1.2107, 1042.49, 313.519, 982.821, 315.225, 986.601, 281.837, 971.482, 236.48, 960.773, 189.233, 929.904, 136.316, 909.116, 139.466, 892.737, 131.276, 682.96, 133.796, 621.224, 140.726, 512.871, 134.426, 473.183, 137.576, 407.037, 130.016, 341.521, 133.166, 262.776, 142.616, 191.591, 145.135, 148.753, 146.395, 122.295, 154.585, 139.934, 206.242 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="a/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 142.671, 250.629, 285.544, 244.524, 319.446, 254.589, 348.052, 269.951, 398.906, 295.378, 435.458, 312.859, 473.069, 335.637, 494.788, 349.41, 521.274, 372.189, 548.291, 390.73, 572.658, 408.74, 617.156, 420.924, 655.296, 432.049, 702.972, 440.524, 738.994, 445.822, 787.199, 446.881, 824.281, 442.114, 873.546, 431.519, 913.276, 418.276, 950.357, 399.205, 982.141, 370.6, 984.789, 314.448, 1040.94, 313.389, 1041.56, 526.383, -2.01416, 515.789, 0.293762, 254.404 )
+
+[node name="Goal" type="Area2D" parent="a"]
+position = Vector2( 906, 368 )
+collision_layer = 0
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="a/Goal"]
+rotation = -1.71391
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="a" groups=[
+"pits",
+]]
+position = Vector2( 649.359, 180.213 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="a/Pit"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="a" groups=[
+"checkpoints",
+]]
+position = Vector2( 196.002, 201.266 )
+
+[node name="b" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1368.96, 882.469 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 2
+
+[node name="Walls" type="StaticBody2D" parent="b"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="b/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 246.819, 65.3052, 292.604, 68.2783, 340.766, 74.8189, 381.794, 85.5218, 421.633, 95.63, 473.363, 103.954, 556.608, 125.36, 570.283, 136.658, 661.258, 149.144, 722.502, 164.604, 764.719, 175.307, 808.125, 191.956, 853.315, 211.578, 870.558, 229.416, 929.424, 258.551, 952.019, 273.416, 958.559, 284.119, 1038.24, 287.687, 1038.83, 0.493469, -1.13062, 3.46643, 1.7771, 298.554, 140.37, 289.362, 145.413, 260.684, 144.413, 210.184, 139.913, 179.184, 136.913, 159.684, 145.413, 139.184, 144.413, 124.184, 176.913, 94.1844, 206.413, 77.1844 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="b/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 381.98, 333.409, 306.699, 313.809, 250.572, 303.564, 231.864, 283.518, 224.291, 249.664, 250.127, 253.673, 269.727, 246.546, 286.208, 241.201, 302.69, 247.882, 317.835, 251.001, 332.09, 249.219, 359.708, 218.037, 378.416, 245.655, 395.344, 267.037, 427.416, 295.546, 463.497, 300, 508.488, 297.327, 531.206, 264.364, 553.478, 298.218, 572.632, 337.418, 654.595, 338.309, 675.977, 304.009, 716.512, 384.635, 741.458, 393.099, 759.276, 389.535, 780.657, 388.645, 782.884, 332.072, 857.598, 425.152, 873.869, 429.915, 936.571, 433.089, 954.429, 427.137, 983.003, 430.311, 976.256, 369.197, 948.477, 289.827, 957.604, 285.064, 1038.96, 288.636, 1038.72, 600.532, -0.714355, 603.051, 0.545654, 298.78, 141.321, 291.316, 156.17, 316.772, 167.484, 347.885, 195.415, 367.33, 233.245, 383.594, 273.55, 395.968, 308.552, 408.343, 329.058, 412.232, 366.535, 406.221, 398.708, 393.14, 416.032, 378.998, 414.264, 360.613, 396.94, 339.753 )
+
+[node name="Goal" type="Area2D" parent="b"]
+position = Vector2( 357.911, 359.565 )
+collision_layer = 0
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="b/Goal"]
+rotation = -1.18682
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="b" groups=[
+"pits",
+]]
+position = Vector2( 246.876, 215.873 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="b/Pit"]
+rotation = -3.47146
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="b" groups=[
+"checkpoints",
+]]
+position = Vector2( 919.833, 376.551 )
+
+[node name="c" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1371, 926.661 )
+z_index = -1
+texture = ExtResource( 12 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Walls" type="StaticBody2D" parent="c"]
+position = Vector2( 85.5263, 32.0724 )
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="c/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 276.473, 353.562, 340.763, 317.845, 262.204, 250.356, 329.627, 248.857, 335.621, 227.132, 335.621, 196.417, 374.577, 224.884, 384.316, 135.735, 346.858, 114.01, 385.814, 96.0299, 453.238, 98.2775, 527.404, 140.23, 693.716, 198.664, 722.184, 181.433, 784.364, 241.366, 845.794, 218.891, 827.814, 171.694, 857.031, 175.44, 890.743, 209.152, 899.733, 226.383, 896.737, 250.356, 879.506, 279.573, 842.798, 311.037, 783.615, 344.749, 704.953, 364.227, 645.77, 380.708, 573.852, 396.441, 537.143, 398.688, 466.723, 406.929, 416.529, 408.427, 394.055, 406.18, 318.39, 403.932, 308.651, 399.437, 277.187, 421.163, 261.454, 445.135, 262.164, 461.345, 274.15, 478.576, 302.618, 489.813, 335.416, 499.056, 391.075, 497.721, 421.8, 487.126, 508.676, 471.234, 620.979, 447.396, 692.493, 426.737, 715.801, 426.207, 825.455, 389.126, 893.261, 355.223, 919.748, 332.445, 939.877, 284.239, 947.293, 257.223, 951.002, 188.358, 997.488, 188.349, 956.005, 568.157, -86.5634, 567.391, -85.5464, 357.78, 188.954, 277.28, 221.454, 280.28 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="c/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 185.537, 278.232, 180.197, 262.881, 204.224, 221.501, 228.252, 200.811, 235.593, 151.422, 196.215, 166.773, 190.876, 160.098, 208.896, 69.3292, 193.546, 42.6326, 196.883, 18.6055, 203.557, 3.25482, 205.56, -12.0958, 232.924, -12.0958, 260.956, -6.75647, 326.363, -15.433, 398.444, -11.4285, 482.539, -0.749695, 573.975, 10.5964, 700.786, 3.25488, 766.86, 3.25488, 801.566, 5.92456, 862.969, 3.9223, 885.661, 7.92682, 918.364, 26.6146, 939.055, 49.3069, 945.061, 70.6643, 950.401, 190.132, 997.787, 188.798, 991.781, -30.1161, -87.4376, -28.7814, -86.1033, 360.324 )
+
+[node name="Goal" type="Area2D" parent="c"]
+position = Vector2( 405.794, 481.785 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="c/Goal"]
+rotation = -1.18682
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="c" groups=[
+"pits",
+]]
+position = Vector2( 655.13, 156.216 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="c/Pit"]
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="c" groups=[
+"pits",
+]]
+position = Vector2( 883.175, 241.261 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="c/Pit2"]
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="c" groups=[
+"checkpoints",
+]]
+position = Vector2( 361.523, 331.142 )
+
+[node name="d" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1368.92, 925.864 )
+z_index = -1
+texture = ExtResource( 8 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 4
+
+[node name="Walls" type="StaticBody2D" parent="d"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="d/Walls"]
+build_mode = 1
+polygon = PoolVector2Array( 452.661, 548.497, 424.585, 545.848, 403.396, 531.545, 393.331, 519.361, 374.261, 515.653, 348.512, 500.57, 310.91, 456.794, 273.869, 467.457, 256.47, 440.518, 237.95, 393.375, 211.572, 411.334, 201.47, 386.64, 198.102, 361.385, 196.98, 327.15, 177.337, 335.007, 161.061, 294.598, 157.132, 269.904, 144.224, 248.577, 122.336, 261.486, 105.499, 274.955, 98.7644, 256.434, 104.938, 229.495, 121.775, 200.311, 138.612, 177.301, 197.545, 46.7057, 265.326, 50.5706, 342.079, 42.5616, 391.468, 43.229, 488.911, 43.8964, 547.644, 40.5593, 623.063, 45.2312, 683.131, 44.5638, 775.235, 36.5548, 853.99, 30.548, 903.379, 31.2154, 1039.96, 34.8042, 1039.29, 0.0983582, -1.21933, -0.569061, 0.782928, 599.441, 459.3, 599.441 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="d/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 452.131, 551.166, 479.678, 546.928, 497.688, 514.085, 493.451, 475.415, 442.067, 454.225, 384.326, 426.15, 327.82, 376.366, 280.09, 324.394, 246.149, 271.008, 233.775, 252.269, 195.237, 238.481, 197.359, 231.763, 215.39, 216.914, 253.22, 227.874, 260.645, 222.924, 312.264, 280.907, 365.297, 247.319, 399.945, 291.514, 415.501, 298.231, 445.907, 298.231, 479.141, 289.039, 515.203, 268.886, 547.023, 245.905, 561.165, 250.855, 624.805, 185.801, 648.139, 197.468, 710.718, 159.638, 730.164, 175.195, 795.217, 135.243, 817.138, 150.092, 865.575, 155.396, 879.01, 147.264, 882.545, 178.023, 871.939, 245.198, 857.796, 266.765, 902.344, 295.756, 951.135, 239.188, 990.733, 157.871, 985.783, 124.636, 975.176, 98.8271, 963.156, 98.4735, 943.357, 73.3712, 899.869, 32.359, 1040.23, 37.3088, 1039.99, 602.323, 459.973, 601.919 )
+
+[node name="Goal" type="Area2D" parent="d"]
+position = Vector2( 904.936, 246.721 )
+collision_layer = 0
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="d/Goal"]
+rotation = -1.71391
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="d" groups=[
+"pits",
+]]
+position = Vector2( 430.431, 202.716 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="d/Pit"]
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="d" groups=[
+"pits",
+]]
+position = Vector2( 844.792, 87.5633 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="d/Pit2"]
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="d" groups=[
+"checkpoints",
+]]
+position = Vector2( 413.448, 481.525 )
+
+[node name="e" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1374.42, 929.055 )
+z_index = -1
+texture = ExtResource( 10 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 5
+
+[node name="Walls" type="StaticBody2D" parent="e"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="e/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 916.693, 361.211, 920.661, 385.022, 914.312, 419.151, 902.406, 446.137, 792.082, 469.948, 774.62, 479.472, 702.394, 492.965, 597.625, 508.839, 466.665, 533.444, 473.014, 600.115, 1042.1, 600.908, 1039.72, 362.005 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="e/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 466.228, 534.319, 338.123, 499.109, 272.947, 476.634, 210.018, 446.668, 183.797, 440.675, 163.57, 424.942, 117.123, 406.963, 171.811, 332.797, 183.048, 316.315, 188.292, 302.83, 280.438, 259.379, 237.736, 233.159, 207.77, 200.196, 194.286, 201.695, 173.309, 154.498, 168.065, 105.803, 152.333, 49.6164, 159.824, 36.8808, 227.248, 42.1249, 328.384, 36.8808, 396.557, 38.3791, 525.411, 33.8842, 629.544, 26.3927, 852.042, 27.891, 985.392, 48.1181, 1006.37, 196.451, 944.938, 262.376, 934.449, 284.851, 923.212, 291.593, 905.981, 293.091, 883.507, 288.596, 872.27, 278.857, 855.788, 251.139, 854.29, 299.085, 858.036, 314.817, 873.768, 328.302, 896.992, 340.288, 916.47, 363.512, 1039.74, 365.874, 1041.99, -1.17127, -6.38995, 2.19612, 1.46729, 602.713, 471.779, 600.468 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="e/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 565.213, 183.507, 547.574, 190.437, 529.935, 193.587, 512.297, 189.807, 488.988, 184.137, 462.53, 169.648, 444.891, 152.009, 436.071, 129.961, 427.252, 114.212, 420.322, 145.71, 418.432, 170.278, 420.952, 199.256, 435.441, 221.935, 449.3, 226.345, 472.609, 227.604, 506.627, 223.195, 537.495, 215.635, 557.654, 202.406 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="e/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 400.794, 373.125, 461.27, 303.2, 479.539, 298.16, 494.028, 308.869, 537.495, 384.465, 499.697, 376.905, 465.679, 377.535, 425.362, 375.015 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="e/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 567.733, 91.533, 626.319, 153.899, 631.359, 138.15, 631.989, 106.022 )
+
+[node name="Goal" type="Area2D" parent="e"]
+position = Vector2( 346.563, 124.294 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e/Goal"]
+rotation = -0.415388
+shape = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="e" groups=[
+"pits",
+]]
+position = Vector2( 241.674, 319.539 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e/Pit"]
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="e" groups=[
+"pits",
+]]
+position = Vector2( 451.214, 496.987 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e/Pit2"]
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="e" groups=[
+"pits",
+]]
+position = Vector2( 657.923, 86.4016 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e/Pit3"]
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Flipper" parent="e" instance=ExtResource( 11 )]
+position = Vector2( 539.938, 379.252 )
+rotation = 0.523599
+snap_angle = -45
+
+[node name="Flipper2" parent="e" instance=ExtResource( 11 )]
+position = Vector2( 846.664, 306.363 )
+rotation = 2.61799
+snap_angle = 45
+
+[node name="Flipper3" parent="e" instance=ExtResource( 11 )]
+position = Vector2( 396.383, 377.103 )
+rotation = 2.61799
+snap_angle = 45
+
+[node name="Flipper5" parent="e" instance=ExtResource( 11 )]
+position = Vector2( 412.762, 201.974 )
+rotation = 2.61799
+snap_angle = 45
+
+[node name="start" type="Position2D" parent="e" groups=[
+"checkpoints",
+]]
+position = Vector2( 900.991, 242.161 )
+
+[node name="f" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1371.97, 918.659 )
+z_index = -1
+texture = ExtResource( 4 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 6
+
+[node name="Walls" type="StaticBody2D" parent="f"]
+position = Vector2( 0, 10 )
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 11 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="f/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 254.748, 234.748, 288.156, 191.54, 304.638, 200.448, 328.692, 208.467, 350.965, 210.694, 377.246, 207.13, 400.855, 198.221, 415.555, 190.649, 457.427, 232.966, 353.192, 239.648 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="f/Walls"]
+position = Vector2( 263.916, -0.0749524 )
+build_mode = 1
+polygon = PoolVector2Array( 254.748, 234.748, 288.156, 191.54, 304.638, 200.448, 328.692, 208.467, 350.965, 210.694, 377.246, 207.13, 400.855, 198.221, 415.555, 190.649, 457.427, 232.966, 353.192, 239.648 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="f/Walls"]
+position = Vector2( 273.365, 149.226 )
+build_mode = 1
+polygon = PoolVector2Array( 254.748, 234.748, 288.156, 191.54, 304.638, 200.448, 328.692, 208.467, 350.965, 210.694, 377.246, 207.13, 400.855, 198.221, 415.555, 190.649, 457.427, 232.966, 353.192, 239.648 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="f/Walls"]
+position = Vector2( -0.66748, 147.966 )
+build_mode = 1
+polygon = PoolVector2Array( 254.748, 234.748, 288.156, 191.54, 304.638, 200.448, 328.692, 208.467, 350.965, 210.694, 377.246, 207.13, 400.855, 198.221, 415.555, 190.649, 457.427, 232.966, 353.192, 239.648 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="f/Walls"]
+position = Vector2( 507.711, 135.367 )
+rotation = -0.174533
+build_mode = 1
+polygon = PoolVector2Array( 254.748, 234.748, 288.156, 191.54, 304.638, 200.448, 328.692, 208.467, 350.965, 210.694, 377.246, 207.13, 400.855, 198.221, 415.555, 190.649, 457.427, 232.966, 353.192, 239.648 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="f/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 3.22681, 299.979, 87.3591, 332.521, 136.568, 374.587, 177.047, 402.366, 184.984, 402.366, 241.337, 448.401, 354.836, 499.992, 369.917, 503.166, 723.113, 442.051, 1040.59, 345.22, 1039.01, 600.792, -1.5351, 601.585, -0.0594482, 296.472 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="f/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 1041.78, 341.337, 1040.28, 3.46906, 1.95618, 3.46906, 1.20703, 292.642, -0.29126, 328.602, -28.0099, 300.883, -28.0099, -33.2394, 1081.49, -30.2429, 1073.99, 392.28, 1041.78, 368.307 )
+
+[node name="Goal" type="Area2D" parent="f"]
+position = Vector2( 352.566, 314.6 )
+collision_layer = 0
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="f/Goal"]
+rotation = -1.71391
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="f" groups=[
+"pits",
+]]
+position = Vector2( 355.12, 459.982 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="f/Pit"]
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="f" groups=[
+"checkpoints",
+]]
+position = Vector2( 350.255, 133.659 )
+
+[node name="g" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1600.91, 742.371 )
+z_index = -1
+texture = ExtResource( 13 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 7
+
+[node name="Walls" type="StaticBody2D" parent="g"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 13 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="g/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 868.008, -0.0302188, 868.008, 27.7194, 91.4405, 24.7762, 87.158, 342.114, 209.508, 341.051, 489.106, 409.584, 191.849, 452.89, 157.373, 449.947, 134.668, 447.004, 115.748, 449.947, 64.0332, 450.788, 59.8289, 571.877, 198.577, 575.661, 200.679, 600.467, 1.38654, 601.729, 0.772247, -0.35755 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="g/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 198.917, 599.877, 197.133, 576.093, 206.646, 567.174, 570.544, 449.442, 700.167, 447.659, 699.573, 382.252, 599.085, 383.441, 277.404, 304.359, 669.239, 241.762, 841.848, 239.873, 841.218, 174.357, 706.407, 176.247, 262.914, 83.6423, 727.825, 123.33, 867.677, 122.7, 867.047, 23.1661, 869.26, 1.40476, 1042.93, 3.29251, 1038.21, 602.653 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="g/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 138.23, 109.95, 153.08, 116.314, 173.586, 121.264, 191.263, 118.436, 206.113, 109.243, 577.344, 206.117, 210.355, 271.171, 141.059, 274.706 )
+
+[node name="Goal" type="Area2D" parent="g"]
+position = Vector2( 806.648, 66.4091 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="g/Goal"]
+rotation = -1.71391
+shape = SubResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="g" groups=[
+"pits",
+]]
+position = Vector2( 125.973, 307.792 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="g/Pit"]
+shape = SubResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="g" groups=[
+"pits",
+]]
+position = Vector2( 786.052, 209.014 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="g/Pit2"]
+shape = SubResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="g" groups=[
+"pits",
+]]
+position = Vector2( 660.322, 416.487 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="g/Pit3"]
+shape = SubResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="g" groups=[
+"checkpoints",
+]]
+position = Vector2( 118.884, 515.387 )
+
+[node name="h" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 2110.16, 454.833 )
+rotation = 0.610865
+z_index = -1
+texture = ExtResource( 14 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 8
+
+[node name="Walls" type="StaticBody2D" parent="h"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 16 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="h/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 513.382, 522.858, 512.277, 535.596, 502.992, 550.504, 489.693, 566.606, 474.179, 572.619, 454.324, 565.504, 450.485, 577.569, 443.044, 589.57, 431.523, 596.667, 419.177, 596.582, 406.33, 593.936, 414.209, 604.264, 427.967, 614.677, 438.686, 617.518, 462.099, 613.089, 479.068, 630.36, 492.712, 656.819, 501.871, 690.386, 505.398, 714.164, 512.569, 736.61, 512.921, 761.084, 518.089, 814.231, 509.412, 862.424, 506.915, 874.549, 501.351, 925.444, 484.663, 953.915, 476.124, 962.641, 438.871, 971.33, 380.049, 967.959, 300.442, 960.142, 229.747, 956.615, 211.308, 946.882, 179.514, 948.933, 140.453, 929.352, 132.034, 891.398, 122.583, 869.583, 115.636, 834.709, 84.3385, 769.954, 81.3253, 757.333, 70.9269, 704.322, 65.5682, 687.863, 65.975, 637.563, 63.4669, 623.219, 57.7124, 569.011, 0.0457764, 578.162, 0.569946, 1041.73, 601.082, 1041.37, 600.802, 517.077 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="h/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 602.335, 522.331, 511.81, 524.678, 508.737, 511.571, 491.735, 496.008, 470.147, 486.098, 443.646, 491.836, 422.101, 502.039, 403.218, 501.222, 383.882, 486.683, 402.069, 487.377, 416.077, 481.231, 426.807, 465.173, 429.917, 443.463, 438.882, 404.835, 444.409, 385.705, 440.803, 373.581, 438.503, 333.684, 428.913, 296.452, 405.846, 258.279, 373.975, 229.323, 335.88, 225.478, 316.301, 230.642, 300.368, 243.629, 275.589, 257.928, 256.011, 269.195, 235.533, 289.638, 241.182, 263.708, 263.544, 240.726, 290.042, 216.678, 312.774, 203.813, 339.152, 192.667, 364.835, 193.606, 396.989, 186.351, 430.781, 177.949, 466.988, 153.818, 499.875, 117.972, 497.866, 102.898, 483.157, 78.4054, 448.208, 54.0179, 424.453, 50.7358, 402.223, 57.6596, 365.57, 52.2133, 347.554, 54.4582, 319.214, 51.833, 289.096, 57.3661, 252.754, 65.5289, 241.89, 65.6464, 192.521, 82.3556, 144.274, 113.834, 133.335, 127.831, 83.9792, 248.233, 59.5562, 331.013, 56.4283, 360.281, 57.4803, 417.734, 62.5918, 449.82, 61.3826, 493.348, 61.0671, 527.836, 58.0388, 572.435, 0.291748, 579.984, 0.209106, 1.50574, 600.01, 2.07764 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="h/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 159.186, 671.251, 180.426, 653.639, 185.803, 636.856, 194.95, 621.544, 204.42, 613.543, 221.156, 610.046, 236.834, 607.975, 253.385, 603.237, 271.132, 596.292, 283.958, 585.255, 289.796, 575.001, 299.408, 593.621, 292.514, 612.151, 266.999, 633.442, 217.209, 662.139, 221.082, 736.163, 171.207, 815.62, 165.642, 803.758 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="h/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 128.782, 580.863, 126.704, 510.379, 139.668, 498.561, 149.091, 481.686, 157.732, 464.673, 167.8, 455.568, 181.225, 450.279, 200.443, 446.414, 226.42, 438.502, 243.338, 429.396, 255.75, 413.854, 263.982, 426.589, 263.846, 441.072, 245.228, 464.385, 222.931, 476.572, 179.485, 503.567 )
+
+[node name="Goal" type="Area2D" parent="h"]
+position = Vector2( 445.393, 906.091 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="h/Goal"]
+rotation = -1.71391
+shape = SubResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="h" groups=[
+"pits",
+]]
+position = Vector2( 385.759, 330.523 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit"]
+shape = SubResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="h" groups=[
+"pits",
+]]
+position = Vector2( 479.623, 529.591 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit2"]
+shape = SubResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="h" groups=[
+"pits",
+]]
+position = Vector2( 170.313, 892.448 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit3"]
+shape = SubResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit4" type="Area2D" parent="h" groups=[
+"pits",
+]]
+position = Vector2( 370.743, 648.581 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit4"]
+shape = SubResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="h" groups=[
+"checkpoints",
+]]
+position = Vector2( 447.056, 119.844 )
+rotation = -0.610865
+
+[node name="i" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1685.56, 495.274 )
+z_index = -1
+texture = ExtResource( 18 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 9
+
+[node name="Walls" type="StaticBody2D" parent="i"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 22 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="i/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 569.419, 590.095, 568.368, 525.976, 557.436, 501.801, 556.385, 478.045, 547.976, 448.614, 547.556, 418.342, 550.919, 403.078, 562.055, 364.77, 562.055, 340.715, 551.142, 315.102, 549.583, 299.734, 543.569, 288.375, 523.524, 268.107, 515.283, 259.198, 473.411, 238.93, 417.729, 224.899, 364.276, 228.24, 276.299, 233.14, 172.287, 259.644, 102.129, 329.579, 70.0564, 388.601, 48.4518, 437.601, 38.8745, 460.987, 36.4246, 487.491, -0.102295, 495.287, 0.612305, -0.133789, 601.035, 1.11243, 600.896, 587.115 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="i/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 325.721, 388.17, 329.689, 395.71, 352.707, 410.393, 367.787, 429.839, 436.839, 404.837, 421.758, 396.107, 384.851, 375.47, 374.93, 375.867 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="i/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 569.186, 588.924, 569.368, 616.548, 580.541, 643.887, 584.108, 697.401, 574, 730.996, 574.298, 769.348, 563.893, 806.51, 568.947, 858.24, 567.337, 882.279, 557.888, 905.273, 535.209, 934.881, 519.775, 961.969, 481.978, 985.908, 465.284, 994.097, 398.508, 1011.11, 362.285, 1015.83, 303.069, 1011.11, 272.516, 1001.66, 226.844, 1002.92, 183.061, 1000.08, 150.303, 993.152, 127.625, 978.663, 114.947, 971.931, 80.4598, 933.282, 55.4872, 882.444, 41.514, 837.254, 38.8389, 829.227, 41.2173, 757.875, 43.8928, 734.685, 49.5415, 715.064, 48.0551, 680.279, 39.4332, 655.901, 33.7843, 572.954, 37.0549, 488.222, -1.6582, 495.946, -0.573486, 1042.34, 600.845, 1042.67, 600.661, 587.076 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="i/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 296.647, 769.423, 311.239, 776.158, 337.056, 778.403, 369.046, 771.107, 375.22, 773.352, 376.623, 788.225, 367.924, 802.255, 352.771, 809.271, 311.239, 808.429, 295.244, 798.046, 288.229, 789.067, 288.51, 776.158 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="i/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 305.025, 575.203, 317.639, 582.772, 329.832, 587.396, 344.127, 586.976, 354.638, 584.033, 367.672, 579.828, 363.888, 608.839, 338.661, 616.828, 326.048, 616.407, 314.275, 609.68, 305.866, 602.533, 300.821, 592.862 )
+
+[node name="Goal" type="Area2D" parent="i"]
+position = Vector2( 373.24, 336.854 )
+rotation = 0.733038
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="i/Goal"]
+rotation = -1.71391
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="i" groups=[
+"pits",
+]]
+position = Vector2( 180.865, 543.882 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="i/Pit"]
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="i" groups=[
+"pits",
+]]
+position = Vector2( 492.888, 544.631 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="i/Pit2"]
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Flipper" parent="i" instance=ExtResource( 11 )]
+position = Vector2( 126.51, 847.691 )
+rotation = 0.523599
+snap_angle = -50
+
+[node name="Flipper3" parent="i" instance=ExtResource( 11 )]
+position = Vector2( 509.461, 848.271 )
+rotation = 2.61799
+
+[node name="Flipper4" parent="i" instance=ExtResource( 11 )]
+position = Vector2( 516.819, 664.897 )
+rotation = 2.61799
+
+[node name="Flipper5" parent="i" instance=ExtResource( 11 )]
+position = Vector2( 496.737, 474.077 )
+rotation = 2.61799
+
+[node name="Flipper2" parent="i" instance=ExtResource( 11 )]
+position = Vector2( 136.391, 655.159 )
+rotation = 0.523599
+snap_angle = -50
+
+[node name="Flipper6" parent="i" instance=ExtResource( 11 )]
+position = Vector2( 163.118, 449.361 )
+rotation = 0.523599
+snap_angle = -50
+
+[node name="start" type="Position2D" parent="i" groups=[
+"checkpoints",
+]]
+position = Vector2( 267.384, 958.492 )
+
+[node name="j" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1691.4, 499.218 )
+z_index = -1
+texture = ExtResource( 20 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 10
+
+[node name="Walls" type="StaticBody2D" parent="j"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 25 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="j/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 316.813, 976.302, 366.332, 972.472, 411.587, 965.401, 463.559, 956.209, 509.168, 948.784, 526.138, 942.42, 541.695, 921.561, 538.513, 905.651, 534.27, 886.205, 520.482, 881.963, 498.561, 883.73, 472.398, 878.781, 420.426, 882.316, 356.433, 885.852, 316.128, 886.559, 274.055, 885.498, 229.507, 881.963, 183.899, 874.184, 157.029, 866.406, 143.594, 850.143, 123.795, 817.616, 121.32, 799.585, 126.977, 771.3, 137.23, 755.037, 146.776, 748.32, 163.746, 747.966, 189.909, 752.209, 212.536, 767.411, 251.074, 787.917, 282.186, 800.999, 314.36, 811.606, 349.362, 819.384, 389.667, 824.333, 435.982, 822.566, 468.509, 817.616, 497.854, 803.474, 519.774, 785.796, 536.745, 763.169, 551.241, 735.591, 561.14, 701.65, 564.676, 677.962, 566.443, 630.233, 564.238, 592.817, 557.496, 538.878, 552.626, 492.43, 543.262, 453.474, 529.777, 434.746, 506.928, 424.257, 477.336, 420.886, 432.012, 426.88, 379.572, 444.11, 283.305, 485.313, 256.628, 495.242, 231.173, 499.131, 202.888, 499.131, 176.018, 486.756, 175.665, 410.742, 177.786, 377.508, 191.221, 329.072, 264.053, 262.25, 320.975, 235.026, 360.22, 220.177, 408.656, 213.106, 449.669, 213.46, 480.781, 215.934, 501.641, 221.238, 512.955, 227.955, 506.237, 243.512, 498.105, 253.411, 454.618, 276.746, 439.062, 275.331, 429.516, 274.978, 408.303, 267.553, 386.736, 268.967, 360.22, 267.2, 339.36, 277.099, 314.965, 304.676, 307.187, 326.243, 306.833, 349.224, 311.076, 367.609, 320.975, 379.63, 349.613, 395.186, 380.372, 401.904, 410.071, 400.843, 528.511, 365.488, 558.464, 345.039, 572.48, 328.687, 579.154, 305.995, 583.158, 283.97, 581.156, 245.927, 570.811, 199.541, 558.464, 164.502, 541.111, 140.141, 514.081, 124.456, 469.697, 122.788, 401.954, 130.797, 267.757, 153.419, 263.565, -1.31286, 603.405, 1.74493, 601.167, 1041.33, 312.167, 1042.33 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="j/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 318.906, 977.529, 288.205, 979.865, 242.486, 979.531, 198.103, 973.858, 167.068, 969.52, 133.363, 960.176, 106.333, 947.829, 81.6383, 930.476, 61.282, 904.113, 45.5976, 873.078, 35.92, 843.711, 29.5795, 787.314, 29.9132, 732.919, 36.5874, 696.878, 52.6055, 657.167, 70.6258, 634.475, 103.997, 621.794, 130.36, 625.131, 165.399, 642.484, 203.776, 669.514, 242.82, 696.545, 286.202, 718.236, 331.921, 733.92, 383.312, 744.599, 426.027, 747.269, 459.898, 742.911, 475.1, 731.597, 486.414, 715.333, 500.556, 682.099, 507.627, 644.269, 509.395, 594.418, 506.213, 572.144, 494.899, 539.264, 481.111, 515.222, 462.373, 498.252, 432.674, 495.423, 407.572, 496.131, 371.863, 506.03, 328.729, 526.89, 281.707, 551.638, 240.341, 570.023, 193.672, 585.58, 163.973, 593.358, 138.518, 592.297, 121.547, 588.761, 107.758, 576.387, 98.5661, 558.356, 98.524, 534.698, 103.019, 484.13, 111.594, 352.22, 114.769, 275.628, 126.674, 241.102, 150.485, 210.148, 186.995, 183.162, 216.759, 169.272, 267.953, 154.192, 262.792, -0.44415, -2.60364, 1.14504, -0.484604, 1043.66, 314.706, 1042.6 )
+
+[node name="Goal" type="Area2D" parent="j"]
+position = Vector2( 469.953, 917.26 )
+rotation = 0.549779
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="j/Goal"]
+rotation = -1.71391
+shape = SubResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="j" groups=[
+"pits",
+]]
+position = Vector2( 203.325, 277.796 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="j" groups=[
+"pits",
+]]
+position = Vector2( 135.899, 548.683 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit2"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="j" groups=[
+"pits",
+]]
+position = Vector2( 510.499, 450.374 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit3"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit4" type="Area2D" parent="j" groups=[
+"pits",
+]]
+position = Vector2( 117.05, 726.822 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit4"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit5" type="Area2D" parent="j" groups=[
+"pits",
+]]
+position = Vector2( 277.922, 946.658 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit5"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Flipper" parent="j" instance=ExtResource( 11 )]
+position = Vector2( 497.739, 240.095 )
+rotation = 0.785398
+snap_angle = 45
+
+[node name="start" type="Position2D" parent="j" groups=[
+"checkpoints",
+]]
+position = Vector2( 370.984, 340.419 )
+
+[node name="k" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1686.3, 501.845 )
+z_index = -1
+texture = ExtResource( 21 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 11
+
+[node name="Walls" type="StaticBody2D" parent="k"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 25 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="k/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 290.054, 1041.13, 291.738, 967.046, 242.349, 967.608, 191.839, 969.853, 128.419, 970.414, 82.9597, 953.577, 66.684, 939.546, 66.684, 919.903, 47.6021, 874.443, 56.8427, 836.583, 53.2751, 780.69, 50.8967, 750.96, 58.032, 707.554, 61.005, 691.499, 72.897, 654.039, 84.7892, 599.336, 85.3838, 561.876, 87.7622, 527.983, 94.3028, 481.604, 93.7082, 431.657, 103.222, 415.603, 108.573, 376.359, 158.703, 331.296, 177.088, 315.386, 241.788, 289.931, 312.145, 277.91, 363.057, 312.204, 389.226, 324.629, 431.443, 342.467, 458.872, 348.49, 490.502, 319.051, 424.045, 298.723, 445.771, 264.262, 481.73, 220.062, 465.248, 181.855, 449.876, 175.383, 392.794, 167.654, 312.522, 147.437, 226.899, 138.518, 179.926, 133.167, 134.736, 117.112, 114.519, 101.058, 100.843, 60.6249, 113.925, 45.1652, 139.493, 34.4623, 171.601, 28.5163, 217.386, 40.4084, 216.197, -2.40309, -0.833771, -1.21388, -0.500092, 1041.82 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="k/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 286.784, 1043.48, 287.974, 968.877, 340.755, 971.258, 403.458, 966.893, 449.492, 968.083, 457.826, 971.655, 494.336, 965.702, 513.782, 960.146, 520.925, 945.859, 533.515, 897.111, 541.504, 867.68, 561.265, 815.124, 564.208, 787.795, 564.208, 766.352, 574.299, 732.716, 576.401, 679.739, 555.799, 682.262, 556.64, 653.672, 575.139, 656.194, 583.99, 577.077, 584.551, 554.628, 558.734, 523.199, 573.888, 491.77, 571.081, 468.76, 514.958, 463.147, 478.478, 463.709, 446.775, 451.702, 416.93, 429.43, 381.74, 413.394, 356.349, 396.021, 318.486, 384.44, 273.05, 375.531, 294.432, 364.84, 317.595, 361.722, 346.104, 368.403, 382.631, 381.321, 465.958, 414.072, 559.191, 410.894, 570.165, 399.139, 544.741, 355.495, 585.148, 342.558, 587.063, 325.06, 584.618, 309.715, 556.727, 288.821, 504.286, 264.848, 549.771, 254.786, 568.705, 263.324, 579.705, 256.824, 583.705, 243.324, 581.205, 223.824, 560.153, 199.57, 552.205, 151.324, 537.995, 115.009, 477.074, 81.738, 438.976, 90.8656, 386.195, 92.8498, 335.398, 87.6908, 304.841, 85.3097, 268.33, 75.3884, 238.17, 61.1018, 212.771, 38.8782, 214.359, -0.409969, 606.05, 1.17743, 602.064, 655.158, 602.509, 697.03, 601.5, 1043.67 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="k/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 300.939, 483.027, 301.78, 493.118, 446.835, 609.162, 507.379, 552.822, 419.085, 515.822 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="k/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 234.345, 729.979, 236.572, 779.424, 259.736, 784.769, 338.58, 786.551 )
+
+[node name="Goal" type="Area2D" parent="k"]
+position = Vector2( 173.046, 85.3635 )
+rotation = -0.733038
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="k/Goal"]
+rotation = -1.71391
+shape = SubResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="k" groups=[
+"pits",
+]]
+position = Vector2( 521.418, 161.323 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="k" groups=[
+"pits",
+]]
+position = Vector2( 139.26, 427.21 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit2"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="k" groups=[
+"pits",
+]]
+position = Vector2( 107.993, 851.292 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit3"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit4" type="Area2D" parent="k" groups=[
+"pits",
+]]
+position = Vector2( 372.328, 794.458 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit4"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Flipper" parent="k" instance=ExtResource( 11 )]
+position = Vector2( 116.261, 877.325 )
+rotation = 0.523599
+snap_angle = -45
+
+[node name="Flipper2" parent="k" instance=ExtResource( 11 )]
+position = Vector2( 498.122, 779.059 )
+rotation = 3.49066
+snap_angle = 45
+
+[node name="Flipper3" parent="k" instance=ExtResource( 11 )]
+position = Vector2( 498.151, 779.062 )
+rotation = 4.71239
+snap_angle = 45
+
+[node name="Flipper4" parent="k" instance=ExtResource( 11 )]
+position = Vector2( 434.17, 620.39 )
+rotation = 1.05418
+snap_angle = 45
+
+[node name="Flipper5" parent="k" instance=ExtResource( 11 )]
+position = Vector2( 206.166, 488.814 )
+rotation = 0.349066
+snap_angle = -90
+
+[node name="Flipper6" parent="k" instance=ExtResource( 11 )]
+position = Vector2( 178.054, 481.729 )
+rotation = -1.0472
+snap_angle = -90
+
+[node name="start" type="Position2D" parent="k" groups=[
+"checkpoints",
+]]
+position = Vector2( 471.726, 916.61 )
+
+[node name="l" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1685.56, 501.372 )
+z_index = -1
+texture = ExtResource( 23 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+layer = 12
+
+[node name="Walls" type="StaticBody2D" parent="l"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 25 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="l/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 124.808, 84.317, 139.079, 119.993, 191.404, 171.129, 220.54, 205.022, 246.409, 225.133, 229.011, 251.511, 200.918, 272.212, 159.89, 321.564, 145.671, 366.057, 153.795, 453.202, 173.241, 493.507, 206.433, 509.427, 257.505, 508.024, 315.873, 508.585, 349.827, 513.917, 359.368, 533.841, 396.372, 546.367, 420.626, 550.461, 470.078, 572.51, 487.167, 605.835, 435.667, 664.335, 426.167, 701.835, 451.667, 733.835, 498.167, 742.835, 438.167, 803.335, 394.667, 782.335, 360.167, 719.335, 334.006, 580.7, 179.251, 555.026, 107.48, 550.783, 99.7156, 449.117, -3.04936, 188.384, -0.220932, 46.963, -0.395997, 0.714479, 125.802, 1.50818, 181.758, 0.714479, 237.007, 1.55073, 312.566, 1.2944, 255.178, 122.451, 227.778, 87.8032, 212.904, 52.6698, 199.396, 31.7454, 139.272, 37.3076, 121.167, 72.3348 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="l/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 325.117, 316.358, 319.447, 334.381, 281.594, 340.178, 264.378, 353.687, 261.994, 370.638, 286.097, 394.211, 323.708, 392.887, 372.708, 401.098, 429.654, 407.454, 459.849, 399.508, 475.5, 410.42, 489.25, 430.92, 484.5, 449.92, 445.75, 452.17, 502, 475.42, 526.236, 526.445, 556.397, 601.668, 566.297, 639.345, 562.586, 670.972, 549.946, 709.805, 523.783, 734.778, 487.215, 742.806, 436.079, 804.644, 559.757, 774.617, 590.379, 732.4, 600.894, 677.653, 598.442, 619.747, 600.544, 563.407, 600.58, 449.678, 601.247, 377.597, 593, 5.66968, 313, -1.33032, 255, 121.67, 302.71, 161.326, 354.623, 188.227, 379.636, 200.969, 398.985, 211.823, 418.039, 227.591, 439.366, 251.162, 447.785, 278.663, 442.734, 309.531, 424.213, 342.643, 417.735, 360.308, 410.319, 377.525, 390.984, 383.881, 354.529, 374.22, 347.988, 357.571, 352.745, 352.814, 355.675, 328.567, 348.286, 304.354, 335.204, 303.462 )
+
+[node name="Goal" type="Area2D" parent="l"]
+position = Vector2( 491.147, 675.294 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Goal"]
+rotation = -1.71391
+shape = SubResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 380.467, 357.174 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 301.621, 317.644 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit2"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 195.926, 472.938 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit3"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit5" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 206.215, 609.476 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit5"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit7" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 188.817, 597.691 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit7"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit8" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 222.49, 598.813 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit8"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit6" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 470.615, 947.609 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit6"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit10" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 501.975, 913.56 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit10"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit9" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 440.412, 912.922 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit9"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit4" type="Area2D" parent="l" groups=[
+"pits",
+]]
+position = Vector2( 309.426, 453.889 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit4"]
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Flipper" parent="l" instance=ExtResource( 11 )]
+position = Vector2( 332.207, 299.585 )
+rotation = -2.44346
+snap_angle = 140
+
+[node name="Flipper2" parent="l" instance=ExtResource( 11 )]
+position = Vector2( 251.881, 362.366 )
+rotation = 3.14159
+snap_angle = -110
+
+[node name="Flipper3" parent="l" instance=ExtResource( 11 )]
+position = Vector2( 368.596, 522.13 )
+rotation = -0.523599
+snap_angle = -80
+
+[node name="start" type="Position2D" parent="l" groups=[
+"checkpoints",
+]]
+position = Vector2( 172.002, 87.3883 )
+
+[node name="m" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1679.71, 517.705 )
+z_index = -1
+texture = ExtResource( 24 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+layer = 13
+
+[node name="Walls" type="StaticBody2D" parent="m"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 28 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="m/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 577.897, 960.305, 584.64, 945.322, 584.265, 926.593, 581.268, 901.871, 578.646, 882.768, 508.975, 837.819, 446.046, 843.437, 387.238, 885.015, 369.632, 889.136, 342.663, 883.143, 314.57, 872.654, 287.6, 861.043, 261.754, 841.565, 246.771, 815.719, 242.651, 782.007, 241.527, 753.539, 249.768, 729.192, 247.52, 662.891, 242.651, 654.276, 240.404, 584.23, 244.898, 562.505, 246.771, 546.023, 240.029, 520.552, 247.52, 462.493, 253.139, 415.296, 250.143, 362.855, 241.153, 307.418, 243.4, 259.098, 244.921, 213.794, 246.905, 170.537, 258.017, 149.901, 265.16, 136.011, 288.971, 121.725, 321.91, 120.931, 340.958, 124.9, 359.61, 147.123, 372.31, 182.046, 367.944, 215.778, 366.357, 268.956, 369.532, 329.277, 373.5, 356.66, 377.469, 387.614, 378.659, 417.378, 372.706, 465.794, 373.103, 490.002, 366.357, 524.131, 368.341, 556.673, 374.691, 595.167, 378.262, 628.106, 387.39, 645.964, 421.519, 672.156, 450.886, 683.665, 473.11, 697.951, 487.396, 711.841, 525.097, 708.666, 553.273, 707.873, 573.116, 706.682, 581.847, 692.792, 574.306, 673.744, 576.688, 636.043, 581.053, 612.629, 585.418, 575.722, 587.799, 523.337, 579.069, 506.273, 582.64, 474.128, 574.307, 453.095, 568.751, 403.885, 568.869, 387.947, 576.437, 340.857, 575.596, 286.198, 575.175, 258.449, 577.698, 223.131, 578.539, 195.382, 584.005, 165.109, 584.846, 120.962, 581.902, 88.5878, 570.55, 64.6222, 559.619, 52.8497, 535.233, 45.2816, 535.537, -0.282005, 612.878, 0.247726, 613.721, 966.196 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="m/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 578.72, 957.274, 573.063, 966.466, 524.273, 967.881, 466.997, 968.941, 400.883, 967.527, 374.111, 966.591, 324.316, 951.493, 256.986, 927.222, 237.894, 914.14, 208.196, 893.988, 192.64, 879.492, 157.284, 828.58, 118.04, 776.608, 119.454, 715.443, 119.808, 612.913, 124.239, 582.097, 124.614, 523.288, 115.746, 511.971, 68.5203, 469.905, 26.4542, 422.283, 26.4542, 384.186, 34.3912, 344.104, 40.7408, 311.165, 33.2007, 277.036, 30.0259, 215.127, 38.7566, 184.57, 33.5975, 152.425, 40.7408, 130.995, 39.1534, 103.216, 34.3912, 94.0881, 60.1865, 48.8472, 86.3786, 34.1637, 133.207, 29.7983, 184.004, 26.6235, 234.801, 26.6235, 262.58, 27.4172, 280.835, 13.9243, 310.202, 11.9401, 340.76, 13.9243, 363.777, 27.8141, 375.682, 38.1322, 411.399, 41.7038, 454.259, 44.0849, 500.69, 45.6723, 535.613, 46.8629, 535.216, 0.828255, 316.155, -16.2363, -0.531494, 2.8125, -0.398682, 1042.57, 616.549, 1043.47, 612.985, 964.621 )
+
+[node name="Goal" type="Area2D" parent="m"]
+position = Vector2( 530.711, 922.316 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="m/Goal"]
+rotation = -1.71391
+shape = SubResource( 29 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="m" groups=[
+"pits",
+]]
+position = Vector2( 173.213, 93.2711 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="m/Pit"]
+shape = SubResource( 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit2" type="Area2D" parent="m" groups=[
+"pits",
+]]
+position = Vector2( 206.213, 585.771 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="m/Pit2"]
+shape = SubResource( 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="m" groups=[
+"pits",
+]]
+position = Vector2( 472.18, 913.956 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="m/Pit3"]
+shape = SubResource( 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start" type="Position2D" parent="m"]
+position = Vector2( 493, 671 )
+
+[node name="Flipper" parent="m" instance=ExtResource( 11 )]
+position = Vector2( 375.04, 512.947 )
+rotation = 0.785398
+snap_angle = -70
+
+[node name="Flipper2" parent="m" instance=ExtResource( 11 )]
+position = Vector2( 116.192, 527.289 )
+rotation = 0.785398
+
+[node name="Flipper3" parent="m" instance=ExtResource( 11 )]
+position = Vector2( 117.995, 677.885 )
+rotation = 1.0472
+snap_angle = -90
+
+[node name="Flipper4" parent="m" instance=ExtResource( 11 )]
+position = Vector2( 247.651, 766.513 )
+rotation = 4.71239
+snap_angle = -120
+
+[node name="Flipper5" parent="m" instance=ExtResource( 11 )]
+position = Vector2( 568.107, 278.542 )
+rotation = 2.61799
+
+[node name="Flipper6" parent="m" instance=ExtResource( 11 )]
+position = Vector2( 274.603, 126.668 )
+rotation = 3.14159
+snap_angle = -50
+
+[node name="Flipper7" parent="m" instance=ExtResource( 11 )]
+position = Vector2( 314.333, 20.1924 )
+snap_angle = 90
+
+[node name="q" type="Sprite" parent="." groups=[
+"levels",
+]]
+visible = false
+position = Vector2( 1680.13, 504.519 )
+z_index = -1
+texture = ExtResource( 19 )
+centered = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+layer = 16
+
+[node name="Walls" type="StaticBody2D" parent="q"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource( 19 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( -0.667419, -1.33484 )
+build_mode = 1
+polygon = PoolVector2Array( 140.713, 930.421, 234.473, 920.75, 230.268, 963.216 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 146.225, 772.2, 154.091, 881.951, 248.485, 872.212, 245.863, 795.799 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 310.665, 809.283, 315.909, 871.089, 359.734, 868.466, 360.109, 845.243, 357.112, 817.524 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 403.574, 824.517, 407.245, 862.894, 516.035, 854.551 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 150.391, 708.401, 290.557, 665.564, 302.841, 684.147, 324.89, 677.533, 338.119, 685.407, 296.542, 735.804, 257.799, 733.284, 236.381, 724.78, 225.041, 719.74, 210.867, 720.685, 202.678, 712.811 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 309.754, 103.522, 309.754, 135.072, 343.486, 104.316 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 393.483, 134.042, 393.168, 164.753, 418.051, 163.808, 417.736, 134.357 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 516.638, 135.363, 478.938, 158.976, 521.599, 158.976 )
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 106.984, 470.891, 129.8, 435.551, 159.408, 399.643, 192.166, 371.295, 195.316, 361.215, 238.468, 332.237, 252.642, 330.347, 258.627, 322.158, 243.192, 311.133, 229.018, 297.904, 213.899, 281.525, 201.93, 266.721, 196.575, 255.382, 195.945, 242.783, 196.26, 229.239, 199.41, 215.694, 231.853, 162.778, 210.12, 162.778, 174.527, 170.337, 151.848, 173.487, 134.839, 177.582, 111.531, 178.212, 94.8368, 176.007, 78.7728, 170.337, 69.7781, 160.318, 67.6543, 139.552, 78.5089, 115.248, 107.769, 93.7746, 152.131, 91.1789, 191.302, 101.326, 204.28, 103.213, 243.687, 119.023, 283.566, 54.1318, 347.749, 54.3678, 358.84, 47.5247, 410.832, 89.6012, 428.852, 80.2573, 456.884, 104.284, 494.485, 93.0165, 528.78, 78.5208, 563.428, 122.008, 566.077, 193.6, 559.342, 211.56, 512.479, 210.437, 531.561, 241.305, 543.066, 268.805, 548.117, 283.958, 555.133, 301.637, 556.905, 317.804, 550.541, 354.573, 555.016, 376.612, 552.21, 417.582, 551.649, 456.868, 600.476, 457.991, 600.706, 1.23814, 0.156342, 2.42735, 0.444107, 481.187 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="q/Walls"]
+position = Vector2( 0, -2.66968 )
+build_mode = 1
+polygon = PoolVector2Array( 108.48, 468.337, 104.482, 493.498, 67.7735, 577.927, 62.1004, 620.975, 57.4285, 640.998, 51.088, 660.687, 47.0835, 686.716, 42.0778, 704.069, 40.0755, 733.436, 36.4047, 742.78, 95.4714, 759.132, 98.1411, 835.552, 101.812, 857.576, 101.478, 883.272, 99.1422, 887.61, 36.071, 892.95, 30.7317, 938.334, 222.949, 1009.75, 319.057, 1006.41, 310.714, 914.975, 579.793, 898.173, 578.11, 877.407, 576.707, 852.994, 572.565, 817.986, 570.443, 766.721, 564.433, 725.002, 563.372, 681.868, 557.362, 667.373, 557.895, 618.094, 564.517, 590.018, 560.279, 541.018, 558.16, 506.321, 558.69, 483.013, 552.068, 453.613, 601.068, 454.672, 600.469, 1043.06, 0.0114594, 1042.67, 0.0546875, 480.075 )
+
+[node name="Goal" type="Area2D" parent="q"]
+position = Vector2( 124.088, 130.954 )
+rotation = 0.837758
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="q/Goal"]
+rotation = -1.71391
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit" type="Area2D" parent="q" groups=[
+"pits",
+]]
+position = Vector2( 327.929, 289.192 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="q/Pit"]
+shape = SubResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pit3" type="Area2D" parent="q" groups=[
+"pits",
+]]
+position = Vector2( 525.819, 558.432 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="q/Pit3"]
+shape = SubResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Flipper2" parent="q" instance=ExtResource( 11 )]
+position = Vector2( 337.184, 363.411 )
+rotation = 0.872665
+snap_angle = -50
+
+[node name="Flipper3" parent="q" instance=ExtResource( 11 )]
+position = Vector2( 502.349, 517.715 )
+rotation = 2.61799
+snap_angle = 30
+
+[node name="start" type="Position2D" parent="q" groups=[
+"checkpoints",
+]]
+position = Vector2( 335.666, 558.261 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -10.0
+
+[node name="GoalPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -10.0
+
+[node name="FallPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -10.0
+
+[node name="cage" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cage"]
+position = Vector2( -1629.06, -1074.86 )
+polygon = PoolVector2Array( 1641.91, 1057.52, 1649, 1066.76, 1649.53, 1077.36, 1646.89, 1085.83, 1636.29, 1094.18, 1625.3, 1095.1, 1624.06, 1105.48, 1640.62, 1103.5, 1654.83, 1092.59, 1656.82, 1083.58, 1659.49, 1075.22, 1657.97, 1062.25, 1652.67, 1052.19, 1621.99, 1044.25, 1604.11, 1054.31, 1597.75, 1068.62, 1597.89, 1085.83, 1607.18, 1097.52, 1617.26, 1104.59, 1623.98, 1105.74, 1625.03, 1094.97, 1616.56, 1092.46, 1611.53, 1086.76, 1609.14, 1075.9, 1610, 1063.39, 1624.64, 1053.65 )
+
+[connection signal="body_entered" from="credits/Goal" to="credits" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="c/Goal" to="c" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="c/Pit" to="c/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="c/Pit2" to="c/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="d/Goal" to="d" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="d/Pit" to="d/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="d/Pit2" to="d/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="e/Goal" to="e" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="e/Pit" to="e/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="e/Pit2" to="e/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="e/Pit3" to="e/Pit3" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="f/Goal" to="f" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="g/Goal" to="g" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="g/Pit" to="g/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="g/Pit2" to="g/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="g/Pit3" to="g/Pit3" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="h/Goal" to="h" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="h/Pit" to="h/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="h/Pit2" to="h/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="h/Pit3" to="h/Pit3" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="h/Pit4" to="h/Pit4" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="i/Goal" to="i" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="i/Pit" to="i/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="i/Pit2" to="i/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="j/Goal" to="j" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="j/Pit" to="j/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="j/Pit2" to="j/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="j/Pit3" to="j/Pit3" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="j/Pit4" to="j/Pit4" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="j/Pit5" to="j/Pit5" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="k/Goal" to="k" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="k/Pit" to="k/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="k/Pit2" to="k/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="k/Pit3" to="k/Pit3" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="k/Pit4" to="k/Pit4" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Goal" to="l" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="l/Pit" to="l/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit2" to="l/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit3" to="l/Pit3" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit5" to="l/Pit5" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit7" to="l/Pit7" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit8" to="l/Pit8" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit6" to="l/Pit6" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit10" to="l/Pit10" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit9" to="l/Pit9" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="l/Pit4" to="l/Pit4" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="m/Goal" to="m" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="m/Pit" to="m/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="m/Pit2" to="m/Pit2" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="m/Pit3" to="m/Pit3" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="q/Goal" to="q" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="q/Pit" to="q/Pit" method="_on_Pit_body_entered"]
+[connection signal="body_entered" from="q/Pit3" to="q/Pit3" method="_on_Pit_body_entered"]

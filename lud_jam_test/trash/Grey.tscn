@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://trash/tiles/wall_grey.tres" type="TileSet" id=1]
+
+[node name="Grey" type="TileMap"]
+scale = Vector2( 5, 5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 10, 10 )
+cell_custom_transform = Transform2D( 10, 0, 0, 10, 0, 0 )
+format = 1

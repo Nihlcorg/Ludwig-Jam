@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/415018__chiptraxxx__138-fart-fart-yeah.wav-be1695e94351614fd27dda9c888d5d23.sample"
+
+[deps]
+
+source_file="res://sounds/415018__chiptraxxx__138-fart-fart-yeah.wav"
+dest_files=[ "res://.import/415018__chiptraxxx__138-fart-fart-yeah.wav-be1695e94351614fd27dda9c888d5d23.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

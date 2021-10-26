@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://trash/lbump.gd" type="Script" id=3]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="LineShape2D" id=2]
+d = -70.0
+
+[sub_resource type="LineShape2D" id=3]
+d = -70.0
+
+[sub_resource type="PhysicsMaterial" id=4]
+
+[sub_resource type="SegmentShape2D" id=5]
+a = Vector2( 66.8404, 1.56847 )
+b = Vector2( -58.4411, 1.03874 )
+
+[sub_resource type="CircleShape2D" id=6]
+
+[node name="Position2D" type="Position2D"]
+position = Vector2( 419.801, 209.9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="leftbound" type="StaticBody2D" parent="."]
+collision_mask = 524288
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftbound"]
+position = Vector2( 0, -0.707108 )
+rotation = 2.79253
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="leftbound"]
+rotation = 0.349066
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="rightbound" type="StaticBody2D" parent="."]
+rotation = 3.14159
+collision_mask = 524288
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightbound"]
+position = Vector2( 0, -0.707108 )
+rotation = 2.79253
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="rightbound"]
+rotation = 0.349066
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( -138.989, 0.594604 )
+node_a = NodePath("lbump")
+node_b = NodePath("leftanchor")
+bias = 0.9
+
+[node name="lbump" type="RigidBody2D" parent="PinJoint2D"]
+position = Vector2( 138.989, -0.594604 )
+physics_material_override = SubResource( 4 )
+gravity_scale = 50.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinJoint2D/lbump"]
+position = Vector2( -80.3303, -0.794571 )
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="PinJoint2D/lbump/CollisionShape2D"]
+position = Vector2( 3.41974, 1.52295 )
+scale = Vector2( 1.96714, 0.0512681 )
+texture = ExtResource( 2 )
+
+[node name="leftanchor" type="StaticBody2D" parent="PinJoint2D"]
+position = Vector2( 138.989, -0.594604 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinJoint2D/leftanchor"]
+position = Vector2( -139.426, 0.668182 )
+shape = SubResource( 6 )

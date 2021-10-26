@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music_zapsplat_rabbits_first_snow_143.mp3-132defbc0ce50740f1b5426468959a8c.mp3str"
+
+[deps]
+
+source_file="res://sounds/music_zapsplat_rabbits_first_snow_143.mp3"
+dest_files=[ "res://.import/music_zapsplat_rabbits_first_snow_143.mp3-132defbc0ce50740f1b5426468959a8c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

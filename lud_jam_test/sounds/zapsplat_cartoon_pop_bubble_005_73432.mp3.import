@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_cartoon_pop_bubble_005_73432.mp3-163f1dd6f580926ad3b2f05867c41a8e.mp3str"
+
+[deps]
+
+source_file="res://sounds/zapsplat_cartoon_pop_bubble_005_73432.mp3"
+dest_files=[ "res://.import/zapsplat_cartoon_pop_bubble_005_73432.mp3-163f1dd6f580926ad3b2f05867c41a8e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

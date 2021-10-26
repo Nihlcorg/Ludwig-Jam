@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.01
+absorbent = true
+
+[sub_resource type="LineShape2D" id=2]
+normal = Vector2( 0.00346331, -0.999994 )
+
+[node name="fence" type="StaticBody2D"]
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 478.004, 599.627 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 473.155, 2.83 )
+rotation = 3.14159
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 1019.65, 285.671 )
+rotation = -1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -3.51477, 247.73 )
+rotation = 1.5708
+shape = SubResource( 2 )

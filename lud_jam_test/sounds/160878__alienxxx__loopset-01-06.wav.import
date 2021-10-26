@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/160878__alienxxx__loopset-01-06.wav-f20e52ad01805ee540f44b46f6ade202.sample"
+
+[deps]
+
+source_file="res://sounds/160878__alienxxx__loopset-01-06.wav"
+dest_files=[ "res://.import/160878__alienxxx__loopset-01-06.wav-f20e52ad01805ee540f44b46f6ade202.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://trash/Flipper.gd" type="Script" id=1]
+[ext_resource path="res://art/flipper.png" type="Texture" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.5
+
+[node name="Flipper" type="Node2D" groups=[
+"flippers",
+]]
+pause_mode = 1
+script = ExtResource( 1 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+mode = 3
+mass = 1.5
+physics_material_override = SubResource( 1 )
+continuous_cd = 2
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 32.5, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+scale = Vector2( 0.5, 0.5 )
+polygon = PoolVector2Array( -4.87572, -22.1101, 144.066, -13.233, 149.685, -9.87572, 151.928, -5.38978, 152.132, 3.78601, 149.278, 8.67976, 143.568, 11.7384, -3.93066, 22.5828, -10.6908, 20.8059, -14.4919, 18.4668, -17.7813, 15.3236, -20.6321, 10.7915, -22.4117, 5.41726, -22.8195, -6.20541, -20.4859, -11.6495, -17.7082, -15.5237, -14.9305, -18.1552, -10.6177, -20.7136 )
