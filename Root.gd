@@ -1,8 +1,8 @@
 extends Node
 
-enum COLLISION {credits,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q}
+enum COLLISION {credits,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,q,end}
 
-onready var collayer = ['credits','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q']
+onready var collayer = ['credits','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','q','end']
 
 onready var levels = get_tree().get_nodes_in_group('levels')
 
@@ -45,6 +45,8 @@ func move_up(level, pos):
 	var next = get_level(collayer[level+1])
 	current.go_away(true)
 	next.arrive()
+	if next.name == 'end':
+		$Billiard/Camera2D.zoom = Vector2(1.25, 1.25)
 	active_level = next
 #	soundPlayer.set_stream(goal_sound)
 #	soundPlayer.set_volume_db(-2000.0)
@@ -63,9 +65,8 @@ func get_level(lvlName):
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_focus_next"):
 #		print('point')
-		checkpoint()	
+		checkpoint()
 #		cheat()
-
 
 func checkpoint():
 	print('point')

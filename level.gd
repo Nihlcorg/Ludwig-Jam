@@ -1,6 +1,6 @@
 extends Sprite
 
-enum COLLISION {credits,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q}
+enum COLLISION {credits,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,q,end}
 
 export(COLLISION) var layer = COLLISION.c
 
