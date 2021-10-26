@@ -25,114 +25,114 @@
 [ext_resource path="res://levels/l.png" type="Texture" id=23]
 [ext_resource path="res://levels/m.png" type="Texture" id=24]
 
-[sub_resource type="PhysicsMaterial" id=25]
-bounce = 0.5
-absorbent = true
-
-[sub_resource type="CapsuleShape2D" id=26]
-radius = 16.6266
-height = 16.2588
-
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
 absorbent = true
 
 [sub_resource type="CapsuleShape2D" id=2]
+radius = 16.6266
+height = 16.2588
+
+[sub_resource type="PhysicsMaterial" id=3]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 18.2101
 height = 24.2873
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=5]
 radius = 20.9376
 
-[sub_resource type="PhysicsMaterial" id=4]
+[sub_resource type="PhysicsMaterial" id=6]
 bounce = 0.5
 absorbent = true
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 11.6789
 height = 12.1862
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=8]
 radius = 17.6331
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=9]
 radius = 16.6305
 
-[sub_resource type="PhysicsMaterial" id=8]
+[sub_resource type="PhysicsMaterial" id=10]
 bounce = 0.5
 absorbent = true
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=11]
 radius = 21.1314
 height = 22.5735
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=12]
 radius = 16.6305
-
-[sub_resource type="PhysicsMaterial" id=11]
-bounce = 0.5
-absorbent = true
-
-[sub_resource type="CapsuleShape2D" id=12]
-radius = 18.2101
-height = 0.0
 
 [sub_resource type="PhysicsMaterial" id=13]
 bounce = 0.5
 absorbent = true
 
 [sub_resource type="CapsuleShape2D" id=14]
+radius = 18.2101
+height = 0.0
+
+[sub_resource type="PhysicsMaterial" id=15]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=16]
 radius = 23.2252
 height = 12.1862
 
-[sub_resource type="CircleShape2D" id=15]
+[sub_resource type="CircleShape2D" id=17]
 radius = 16.6305
 
-[sub_resource type="PhysicsMaterial" id=16]
+[sub_resource type="PhysicsMaterial" id=18]
 bounce = 0.5
 absorbent = true
 
-[sub_resource type="CapsuleShape2D" id=17]
+[sub_resource type="CapsuleShape2D" id=19]
 radius = 27.2169
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=18]
+[sub_resource type="CircleShape2D" id=20]
 radius = 16.6305
 
-[sub_resource type="PhysicsMaterial" id=22]
+[sub_resource type="PhysicsMaterial" id=21]
 bounce = 0.5
 absorbent = true
 
-[sub_resource type="CapsuleShape2D" id=23]
+[sub_resource type="CapsuleShape2D" id=22]
 radius = 19.2702
 height = 11.5343
 
-[sub_resource type="CircleShape2D" id=24]
+[sub_resource type="CircleShape2D" id=23]
 radius = 16.6305
 
-[sub_resource type="CircleShape2D" id=27]
+[sub_resource type="CircleShape2D" id=24]
 radius = 14.7823
+
+[sub_resource type="PhysicsMaterial" id=25]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id=26]
+radius = 25.1965
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=27]
+radius = 16.6305
 
 [sub_resource type="PhysicsMaterial" id=28]
 bounce = 0.5
 absorbent = true
 
 [sub_resource type="CapsuleShape2D" id=29]
-radius = 25.1965
-height = 0.0
-
-[sub_resource type="CircleShape2D" id=30]
-radius = 16.6305
-
-[sub_resource type="PhysicsMaterial" id=19]
-bounce = 0.5
-absorbent = true
-
-[sub_resource type="CapsuleShape2D" id=20]
 radius = 11.6789
 height = 12.1862
 
-[sub_resource type="CircleShape2D" id=21]
+[sub_resource type="CircleShape2D" id=30]
 radius = 16.6305
 
 [node name="PongRoot" type="Node"]
@@ -173,7 +173,7 @@ layer = 0
 [node name="Walls" type="StaticBody2D" parent="credits"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 25 )
+physics_material_override = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -257,7 +257,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="credits/Goal"]
 rotation = -1.71391
-shape = SubResource( 26 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -285,7 +285,7 @@ layer = 1
 [node name="Walls" type="StaticBody2D" parent="a"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 1 )
+physics_material_override = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -310,7 +310,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="a/Goal"]
 rotation = -1.71391
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -327,7 +327,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="a/Pit"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -355,7 +355,7 @@ layer = 2
 [node name="Walls" type="StaticBody2D" parent="b"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 4 )
+physics_material_override = SubResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -381,7 +381,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="b/Goal"]
 rotation = -1.18682
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -399,7 +399,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="b/Pit"]
 rotation = -3.47146
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -427,7 +427,7 @@ __meta__ = {
 position = Vector2( 85.5263, 32.0724 )
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 4 )
+physics_material_override = SubResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -450,7 +450,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="c/Goal"]
 rotation = -1.18682
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -464,7 +464,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="c/Pit"]
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -478,7 +478,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="c/Pit2"]
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -506,7 +506,7 @@ layer = 4
 [node name="Walls" type="StaticBody2D" parent="d"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 4 )
+physics_material_override = SubResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -531,7 +531,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="d/Goal"]
 rotation = -1.71391
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -548,7 +548,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="d/Pit"]
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -565,7 +565,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="d/Pit2"]
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -593,7 +593,7 @@ layer = 5
 [node name="Walls" type="StaticBody2D" parent="e"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 8 )
+physics_material_override = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -631,7 +631,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="e/Goal"]
 rotation = -0.415388
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -645,7 +645,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="e/Pit"]
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -659,7 +659,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="e/Pit2"]
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -673,7 +673,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="e/Pit3"]
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -722,7 +722,7 @@ layer = 6
 position = Vector2( 0, 10 )
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 11 )
+physics_material_override = SubResource( 13 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -774,7 +774,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="f/Goal"]
 rotation = -1.71391
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -791,7 +791,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="f/Pit"]
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -819,7 +819,7 @@ layer = 7
 [node name="Walls" type="StaticBody2D" parent="g"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 13 )
+physics_material_override = SubResource( 15 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -847,7 +847,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="g/Goal"]
 rotation = -1.71391
-shape = SubResource( 14 )
+shape = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -864,7 +864,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="g/Pit"]
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -878,7 +878,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="g/Pit2"]
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -892,7 +892,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="g/Pit3"]
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -921,7 +921,7 @@ layer = 8
 [node name="Walls" type="StaticBody2D" parent="h"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 16 )
+physics_material_override = SubResource( 18 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -954,7 +954,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="h/Goal"]
 rotation = -1.71391
-shape = SubResource( 17 )
+shape = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -968,7 +968,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit"]
-shape = SubResource( 18 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -982,7 +982,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit2"]
-shape = SubResource( 18 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -996,7 +996,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit3"]
-shape = SubResource( 18 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1010,7 +1010,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="h/Pit4"]
-shape = SubResource( 18 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1039,7 +1039,7 @@ layer = 9
 [node name="Walls" type="StaticBody2D" parent="i"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 22 )
+physics_material_override = SubResource( 21 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1078,7 +1078,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="i/Goal"]
 rotation = -1.71391
-shape = SubResource( 23 )
+shape = SubResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1092,7 +1092,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="i/Pit"]
-shape = SubResource( 24 )
+shape = SubResource( 23 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1106,7 +1106,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="i/Pit2"]
-shape = SubResource( 24 )
+shape = SubResource( 23 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1161,7 +1161,7 @@ layer = 10
 [node name="Walls" type="StaticBody2D" parent="j"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 25 )
+physics_material_override = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1185,7 +1185,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="j/Goal"]
 rotation = -1.71391
-shape = SubResource( 26 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1199,7 +1199,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1213,7 +1213,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit2"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1227,7 +1227,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit3"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1241,7 +1241,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit4"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1255,7 +1255,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="j/Pit5"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1288,7 +1288,7 @@ layer = 11
 [node name="Walls" type="StaticBody2D" parent="k"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 25 )
+physics_material_override = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1322,7 +1322,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="k/Goal"]
 rotation = -1.71391
-shape = SubResource( 26 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1336,7 +1336,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1350,7 +1350,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit2"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1364,7 +1364,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit3"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1378,7 +1378,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="k/Pit4"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1436,7 +1436,7 @@ layer = 12
 [node name="Walls" type="StaticBody2D" parent="l"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 25 )
+physics_material_override = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1459,7 +1459,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Goal"]
 rotation = -1.71391
-shape = SubResource( 26 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1473,7 +1473,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1487,7 +1487,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit2"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1501,7 +1501,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit3"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1515,7 +1515,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit5"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1529,7 +1529,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit7"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1543,7 +1543,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit8"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1557,7 +1557,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit6"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1571,7 +1571,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit10"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1585,7 +1585,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit9"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1599,7 +1599,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="l/Pit4"]
-shape = SubResource( 27 )
+shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1641,7 +1641,7 @@ layer = 13
 [node name="Walls" type="StaticBody2D" parent="m"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 28 )
+physics_material_override = SubResource( 25 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1664,7 +1664,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="m/Goal"]
 rotation = -1.71391
-shape = SubResource( 29 )
+shape = SubResource( 26 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1678,7 +1678,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="m/Pit"]
-shape = SubResource( 30 )
+shape = SubResource( 27 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1692,7 +1692,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="m/Pit2"]
-shape = SubResource( 30 )
+shape = SubResource( 27 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1706,7 +1706,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="m/Pit3"]
-shape = SubResource( 30 )
+shape = SubResource( 27 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1763,7 +1763,7 @@ layer = 16
 [node name="Walls" type="StaticBody2D" parent="q"]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = SubResource( 19 )
+physics_material_override = SubResource( 28 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1827,7 +1827,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="q/Goal"]
 rotation = -1.71391
-shape = SubResource( 20 )
+shape = SubResource( 29 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1841,7 +1841,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="q/Pit"]
-shape = SubResource( 21 )
+shape = SubResource( 30 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1855,7 +1855,7 @@ collision_mask = 0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="q/Pit3"]
-shape = SubResource( 21 )
+shape = SubResource( 30 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1878,6 +1878,7 @@ position = Vector2( 335.666, 558.261 )
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 volume_db = -10.0
+autoplay = true
 
 [node name="GoalPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
