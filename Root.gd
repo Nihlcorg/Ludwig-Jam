@@ -10,7 +10,7 @@ onready var billiard = $Billiard
 onready var goalPlayer = $GoalPlayer
 onready var fallPlayer = $FallPlayer
 onready var contact = $Contact
-onready var active_level = levels[COLLISION.a]
+onready var active_level = levels[COLLISION.q]
 onready var cage = $cage
 
 #var fall_sound = preload('res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3')
@@ -20,8 +20,9 @@ func _ready():
 #	$Flippers.follow = billiard
 #	contact.fallStreak = 5
 	contact.link = billiard
+	billiard.global_position = active_level.checkpoint.global_position
 	contact.connect('slap', billiard, 'apply_central_impulse')
-	levels[COLLISION.a].arrive()
+	active_level.arrive()
 	for level in levels:
 		level.connect('fall', self, 'move_down')
 		level.connect('goal', self, 'move_up')
@@ -65,8 +66,8 @@ func get_level(lvlName):
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_focus_next"):
 #		print('point')
-		checkpoint()
-#		cheat()
+#		checkpoint()
+		cheat()
 
 func checkpoint():
 	print('point')

@@ -14,6 +14,11 @@ config/name="lud_jam_test"
 run/main_scene="res://PongRoot.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.tscn"
+Settings="*res://Settings.tscn"
+
 [input]
 
 ui_space={
