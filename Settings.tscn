@@ -139,6 +139,7 @@ custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 7 )
 step = 25.0
+value = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,6 +147,7 @@ __meta__ = {
 [node name="MusicBox" type="HBoxContainer" parent="." groups=[
 "audio",
 ]]
+visible = false
 margin_left = 330.227
 margin_top = 231.457
 margin_right = 792.227
@@ -160,7 +162,9 @@ margin_right = 229.0
 margin_bottom = 83.0
 texture = ExtResource( 13 )
 
-[node name="MusicSlider" type="HSlider" parent="MusicBox"]
+[node name="MusicSlider" type="HSlider" parent="MusicBox" groups=[
+"Persistent",
+]]
 margin_left = 233.0
 margin_right = 462.0
 margin_bottom = 83.0
@@ -176,6 +180,7 @@ __meta__ = {
 }
 
 [node name="CheckButton" type="CheckButton" parent="." groups=[
+"Persistent",
 "controls",
 ]]
 visible = false
