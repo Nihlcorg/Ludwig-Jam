@@ -22,6 +22,8 @@ var power = 0
 var slope = Vector2()
 var slap = Vector2()
 var fallStreak = 0
+var sounds = true
+var inverted = false
 
 signal slap(force)
 
@@ -52,9 +54,11 @@ func _process(delta):
 	else: charge.set_progress_texture(bar_charge)
 	global_position = link.global_position
 	if clock == true && not moving:
-		contact.rotation_degrees += 2
+		if not inverted: contact.rotation_degrees += 2
+		if inverted: contact.rotation_degrees -= 2
 	if unclock == true && not moving:
-		contact.rotation_degrees -= 2
+		if not inverted: contact.rotation_degrees -= 2
+		if inverted: contact.rotation_degrees += 2
 	if powerCharge == true && power < powerLim:
 		power += chargeRate
 #		print(power)
@@ -76,14 +80,16 @@ func get_force():
 	power = 0
 
 func short_sound():
+	
 	if fallStreak < 3: $AudioStreamPlayer2D.set_stream(short_pop)
 	else: $AudioStreamPlayer2D.set_stream(short_fart)
-	$AudioStreamPlayer2D.play()
+	if sounds:
+		$AudioStreamPlayer2D.play()
 
 func long_sound():
 	if fallStreak < 3:
 		$AudioStreamPlayer2D.set_stream(long_pop)
-		$AudioStreamPlayer2D.play()
+		if sounds: $AudioStreamPlayer2D.play()
 	else:
 		$AudioStreamPlayer2D.set_stream(long_fart)
-		$AudioStreamPlayer2D.play(0.6)
+		if sounds: $AudioStreamPlayer2D.play(0.6)

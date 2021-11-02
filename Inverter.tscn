@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://art/inverted label.png" type="Texture" id=1]
+[ext_resource path="res://art/un checked.png" type="Texture" id=2]
+[ext_resource path="res://art/checked.png" type="Texture" id=3]
+[ext_resource path="res://Inverter.gd" type="Script" id=4]
+
+[node name="Inverter" type="CheckButton" groups=[
+"controls",
+]]
+visible = false
+margin_right = 329.0
+margin_bottom = 91.0
+custom_icons/off = ExtResource( 2 )
+custom_icons/on = ExtResource( 3 )
+icon = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="." to="." method="_on_Inverter_toggled"]

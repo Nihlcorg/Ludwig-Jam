@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://art/audio button.png" type="Texture" id=1]
 [ext_resource path="res://art/audio button focus.png" type="Texture" id=2]
@@ -6,26 +6,19 @@
 [ext_resource path="res://art/control button focus.png" type="Texture" id=4]
 [ext_resource path="res://art/quit button.png" type="Texture" id=5]
 [ext_resource path="res://art/quit button focus.png" type="Texture" id=6]
-[ext_resource path="res://art/grabber.png" type="Texture" id=7]
-[ext_resource path="res://art/slider.png" type="Texture" id=8]
-[ext_resource path="res://art/inverted label.png" type="Texture" id=9]
-[ext_resource path="res://art/checked.png" type="Texture" id=10]
-[ext_resource path="res://art/sound label.png" type="Texture" id=11]
-[ext_resource path="res://art/un checked.png" type="Texture" id=12]
-[ext_resource path="res://art/music label.png" type="Texture" id=13]
+[ext_resource path="res://MusicBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SoundBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Inverter.tscn" type="PackedScene" id=9]
+[ext_resource path="res://art/menu.png" type="Texture" id=10]
+[ext_resource path="res://sounds/music_zapsplat_winter_dance.mp3" type="AudioStream" id=11]
 [ext_resource path="res://art/just quit.png" type="Texture" id=14]
 [ext_resource path="res://art/save quit.png" type="Texture" id=15]
 [ext_resource path="res://Settings.gd" type="Script" id=16]
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 229, 83 )
-
-[sub_resource type="StyleBoxEmpty" id=6]
-
-[sub_resource type="StyleBoxEmpty" id=7]
-
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" groups=[
+"Persist",
+]]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.396851
@@ -36,22 +29,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
-visible = false
+[node name="Bground" type="TextureRect" parent="."]
 show_behind_parent = true
-margin_left = 1.19843
-margin_top = -2.0
-margin_right = 815.198
-margin_bottom = 486.0
+margin_left = -524.284
+margin_top = -288.465
+margin_right = 515.716
+margin_bottom = 311.535
+texture = ExtResource( 10 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="AudioBtn" type="TextureButton" parent="."]
-margin_left = 53.7401
-margin_top = 31.1127
-margin_right = 249.74
-margin_bottom = 101.113
+margin_left = -337.318
+margin_top = -174.155
+margin_right = -141.318
+margin_bottom = -104.155
 texture_normal = ExtResource( 1 )
 texture_focused = ExtResource( 2 )
 __meta__ = {
@@ -60,10 +54,10 @@ __meta__ = {
 }
 
 [node name="ControlBtn" type="TextureButton" parent="."]
-margin_left = 44.9872
-margin_top = 143.105
-margin_right = 273.987
-margin_bottom = 226.105
+margin_left = -346.071
+margin_top = -62.1631
+margin_right = -117.071
+margin_bottom = 20.8369
 texture_normal = ExtResource( 3 )
 texture_focused = ExtResource( 4 )
 __meta__ = {
@@ -72,10 +66,10 @@ __meta__ = {
 }
 
 [node name="QuitBtn" type="TextureButton" parent="."]
-margin_left = 29.3927
-margin_top = 275.087
-margin_right = 258.393
-margin_bottom = 358.087
+margin_left = -361.666
+margin_top = 69.8189
+margin_right = -132.665
+margin_bottom = 152.819
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
 __meta__ = {
@@ -87,10 +81,10 @@ __meta__ = {
 "quit",
 ]]
 visible = false
-margin_left = 416.48
-margin_top = 233.72
-margin_right = 651.48
-margin_bottom = 336.72
+margin_left = 25.4218
+margin_top = 28.4519
+margin_right = 260.422
+margin_bottom = 131.452
 texture_normal = ExtResource( 14 )
 __meta__ = {
 "_edit_lock_": true,
@@ -101,101 +95,44 @@ __meta__ = {
 "quit",
 ]]
 visible = false
-margin_left = 420.723
-margin_top = 66.1378
-margin_right = 655.723
-margin_bottom = 169.138
+margin_left = 29.6648
+margin_top = -139.13
+margin_right = 264.665
+margin_bottom = -36.1301
 texture_normal = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="SoundBox" type="HBoxContainer" parent="." groups=[
-"audio",
-]]
-visible = false
-margin_left = 330.179
-margin_top = 64.4467
-margin_right = 792.179
-margin_bottom = 147.447
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="SoundBox" parent="." instance=ExtResource( 8 )]
+margin_left = -60.8792
+margin_top = -140.821
+margin_right = 401.121
+margin_bottom = -57.8211
 
-[node name="TextureRect" type="TextureRect" parent="SoundBox"]
-margin_right = 229.0
-margin_bottom = 83.0
-texture = ExtResource( 11 )
+[node name="MusicBox" parent="." instance=ExtResource( 7 )]
+margin_left = -60.8312
+margin_top = 26.1889
+margin_right = 401.169
+margin_bottom = 109.189
 
-[node name="SoundSlider" type="HSlider" parent="SoundBox"]
-margin_left = 233.0
-margin_right = 462.0
-margin_bottom = 83.0
-custom_icons/grabber_highlight = ExtResource( 7 )
-custom_icons/grabber = ExtResource( 7 )
-custom_styles/slider = SubResource( 5 )
-custom_styles/grabber_area_highlight = SubResource( 6 )
-custom_styles/grabber_area = SubResource( 7 )
-step = 25.0
-value = 50.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Inverter" parent="." instance=ExtResource( 9 )]
+margin_left = -20.1842
+margin_top = -131.763
+margin_right = 308.816
+margin_bottom = -40.7629
 
-[node name="MusicBox" type="HBoxContainer" parent="." groups=[
-"audio",
-]]
-visible = false
-margin_left = 330.227
-margin_top = 231.457
-margin_right = 792.227
-margin_bottom = 314.457
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -15.0
 
-[node name="TextureRect" type="TextureRect" parent="MusicBox"]
-margin_right = 229.0
-margin_bottom = 83.0
-texture = ExtResource( 13 )
-
-[node name="MusicSlider" type="HSlider" parent="MusicBox" groups=[
-"Persistent",
-]]
-margin_left = 233.0
-margin_right = 462.0
-margin_bottom = 83.0
-custom_icons/grabber_highlight = ExtResource( 7 )
-custom_icons/grabber = ExtResource( 7 )
-custom_styles/slider = SubResource( 5 )
-custom_styles/grabber_area_highlight = SubResource( 6 )
-custom_styles/grabber_area = SubResource( 7 )
-step = 25.0
-value = 50.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckButton" type="CheckButton" parent="." groups=[
-"Persistent",
-"controls",
-]]
-visible = false
-margin_left = 370.874
-margin_top = 73.5052
-margin_right = 699.874
-margin_bottom = 164.505
-custom_icons/off = ExtResource( 12 )
-custom_icons/on = ExtResource( 10 )
-icon = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
+[connection signal="save_quit" from="." to="." method="_on_Settings_save_quit"]
 [connection signal="pressed" from="AudioBtn" to="." method="_on_AudioBtn_pressed"]
 [connection signal="pressed" from="ControlBtn" to="." method="_on_ControlBtn_pressed"]
 [connection signal="pressed" from="QuitBtn" to="." method="_on_QuitBtn_pressed"]
+[connection signal="pressed" from="justquit" to="." method="_on_justquit_pressed"]
+[connection signal="pressed" from="savequit" to="." method="_on_savequit_pressed"]
+[connection signal="volume_changed" from="SoundBox" to="." method="setting_changed"]
+[connection signal="volume_changed" from="MusicBox" to="." method="setting_changed"]
+[connection signal="shift" from="Inverter" to="." method="_on_Inverter_shift"]

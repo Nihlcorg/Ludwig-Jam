@@ -14,7 +14,6 @@
 [ext_resource path="res://levels/c.png" type="Texture" id=12]
 [ext_resource path="res://levels/g.png" type="Texture" id=13]
 [ext_resource path="res://levels/h.png" type="Texture" id=14]
-[ext_resource path="res://sounds/music_zapsplat_winter_dance.mp3" type="AudioStream" id=15]
 [ext_resource path="res://sounds/zapsplat_cartoon_flutter_delicate_64209.mp3" type="AudioStream" id=16]
 [ext_resource path="res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3" type="AudioStream" id=17]
 [ext_resource path="res://levels/i.png" type="Texture" id=18]
@@ -27,7 +26,8 @@
 [ext_resource path="res://levels/n.png" type="Texture" id=25]
 [ext_resource path="res://levels/o.png" type="Texture" id=26]
 [ext_resource path="res://levels/end.png" type="Texture" id=27]
-[ext_resource path="res://assets/Night_sky.jpg" type="Texture" id=28]
+[ext_resource path="res://Settings.tscn" type="PackedScene" id=29]
+[ext_resource path="res://art/paper.png" type="Texture" id=30]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
@@ -172,15 +172,13 @@ height = 0.0
 [node name="PongRoot" type="Node"]
 script = ExtResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="."]
-show_behind_parent = true
-position = Vector2( 2046.34, 1285.64 )
-scale = Vector2( 1.01227, 0.918094 )
-z_index = -1
-texture = ExtResource( 28 )
+[node name="Settings" parent="." instance=ExtResource( 29 )]
+visible = false
+margin_left = 0.0
+margin_right = 0.0
 
 [node name="Billiard" parent="." instance=ExtResource( 6 )]
-position = Vector2( 415.608, 805.234 )
+position = Vector2( 2232.16, 709.775 )
 collision_layer = 524288
 collision_mask = 524287
 gravity_scale = 10.0
@@ -189,12 +187,22 @@ continuous_cd = 2
 [node name="Camera2D" type="Camera2D" parent="Billiard"]
 rotation = 0.610865
 current = true
-zoom = Vector2( 0.75, 0.75 )
+limit_top = -84
+limit_bottom = 2057
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Contact" parent="." instance=ExtResource( 9 )]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 2203.68, 983.182 )
+rotation = 1.5708
+z_index = -1
+texture = ExtResource( 30 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="credits" type="Sprite" parent="." groups=[
 "levels",
@@ -947,15 +955,14 @@ position = Vector2( 118.884, 515.387 )
 "levels",
 ]]
 visible = false
-position = Vector2( 2110.16, 454.833 )
+position = Vector2( 2129.24, 446.976 )
 rotation = 0.610865
 z_index = -1
 texture = ExtResource( 14 )
 centered = false
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 layer = 8
 
@@ -964,32 +971,31 @@ collision_layer = 0
 collision_mask = 0
 physics_material_override = SubResource( 18 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="h/Walls"]
-position = Vector2( -0.667419, -1.33484 )
+position = Vector2( -8.45746, 17.1935 )
 build_mode = 1
 polygon = PoolVector2Array( 513.382, 522.858, 512.277, 535.596, 502.992, 550.504, 489.693, 566.606, 474.179, 572.619, 454.324, 565.504, 450.485, 577.569, 443.044, 589.57, 431.523, 596.667, 419.177, 596.582, 406.33, 593.936, 414.209, 604.264, 427.967, 614.677, 438.686, 617.518, 462.099, 613.089, 479.068, 630.36, 492.712, 656.819, 501.871, 690.386, 505.398, 714.164, 512.569, 736.61, 512.921, 761.084, 518.089, 814.231, 509.412, 862.424, 506.915, 874.549, 501.351, 925.444, 484.663, 953.915, 476.124, 962.641, 438.871, 971.33, 380.049, 967.959, 300.442, 960.142, 229.747, 956.615, 211.308, 946.882, 179.514, 948.933, 140.453, 929.352, 132.034, 891.398, 122.583, 869.583, 115.636, 834.709, 84.3385, 769.954, 81.3253, 757.333, 70.9269, 704.322, 65.5682, 687.863, 65.975, 637.563, 63.4669, 623.219, 57.7124, 569.011, 0.0457764, 578.162, 0.569946, 1041.73, 601.082, 1041.37, 600.802, 517.077 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="h/Walls"]
-position = Vector2( 0, -2.66968 )
+position = Vector2( -7.99707, 14.4655 )
 build_mode = 1
 polygon = PoolVector2Array( 602.335, 522.331, 511.81, 524.678, 508.737, 511.571, 491.735, 496.008, 470.147, 486.098, 443.646, 491.836, 422.101, 502.039, 403.218, 501.222, 383.882, 486.683, 402.069, 487.377, 416.077, 481.231, 426.807, 465.173, 429.917, 443.463, 438.882, 404.835, 444.409, 385.705, 440.803, 373.581, 438.503, 333.684, 428.913, 296.452, 405.846, 258.279, 373.975, 229.323, 335.88, 225.478, 316.301, 230.642, 300.368, 243.629, 275.589, 257.928, 256.011, 269.195, 235.533, 289.638, 241.182, 263.708, 263.544, 240.726, 290.042, 216.678, 312.774, 203.813, 339.152, 192.667, 364.835, 193.606, 396.989, 186.351, 430.781, 177.949, 466.988, 153.818, 499.875, 117.972, 497.866, 102.898, 483.157, 78.4054, 448.208, 54.0179, 424.453, 50.7358, 402.223, 57.6596, 365.57, 52.2133, 347.554, 54.4582, 319.214, 51.833, 289.096, 57.3661, 252.754, 65.5289, 241.89, 65.6464, 192.521, 82.3556, 144.274, 113.834, 133.335, 127.831, 83.9792, 248.233, 59.5562, 331.013, 56.4283, 360.281, 57.4803, 417.734, 62.5918, 449.82, 61.3826, 493.348, 61.0671, 527.836, 58.0388, 572.435, 0.291748, 579.984, 0.209106, 1.50574, 600.01, 2.07764 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="h/Walls"]
-position = Vector2( 0, -2.66968 )
+position = Vector2( -9.08105, 12.9175 )
 build_mode = 1
 polygon = PoolVector2Array( 159.186, 671.251, 180.426, 653.639, 185.803, 636.856, 194.95, 621.544, 204.42, 613.543, 221.156, 610.046, 236.834, 607.975, 253.385, 603.237, 271.132, 596.292, 283.958, 585.255, 289.796, 575.001, 299.408, 593.621, 292.514, 612.151, 266.999, 633.442, 217.209, 662.139, 221.082, 736.163, 171.207, 815.62, 165.642, 803.758 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="h/Walls"]
-position = Vector2( 0, -2.66968 )
+position = Vector2( -7.89404, 11.3173 )
 build_mode = 1
 polygon = PoolVector2Array( 128.782, 580.863, 126.704, 510.379, 139.668, 498.561, 149.091, 481.686, 157.732, 464.673, 167.8, 455.568, 181.225, 450.279, 200.443, 446.414, 226.42, 438.502, 243.338, 429.396, 255.75, 413.854, 263.982, 426.589, 263.846, 441.072, 245.228, 464.385, 222.931, 476.572, 179.485, 503.567 )
 
 [node name="Goal" type="Area2D" parent="h"]
-position = Vector2( 445.393, 906.091 )
+position = Vector2( 437.354, 920.938 )
 collision_layer = 0
 collision_mask = 0
 
@@ -1003,7 +1009,7 @@ __meta__ = {
 [node name="Pit" type="Area2D" parent="h" groups=[
 "pits",
 ]]
-position = Vector2( 385.759, 330.523 )
+position = Vector2( 374.809, 351.536 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1017,7 +1023,7 @@ __meta__ = {
 [node name="Pit2" type="Area2D" parent="h" groups=[
 "pits",
 ]]
-position = Vector2( 479.623, 529.591 )
+position = Vector2( 472.451, 544.61 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1031,7 +1037,7 @@ __meta__ = {
 [node name="Pit3" type="Area2D" parent="h" groups=[
 "pits",
 ]]
-position = Vector2( 170.313, 892.448 )
+position = Vector2( 158.032, 905.661 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1045,7 +1051,7 @@ __meta__ = {
 [node name="Pit4" type="Area2D" parent="h" groups=[
 "pits",
 ]]
-position = Vector2( 370.743, 648.581 )
+position = Vector2( 368.992, 671.34 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1059,7 +1065,7 @@ __meta__ = {
 [node name="start" type="Position2D" parent="h" groups=[
 "checkpoints",
 ]]
-position = Vector2( 447.056, 119.844 )
+position = Vector2( 435.769, 135.813 )
 rotation = -0.610865
 
 [node name="i" type="Sprite" parent="." groups=[
@@ -2340,10 +2346,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 15 )
-volume_db = -15.0
-
 [node name="GoalPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 volume_db = -15.0
@@ -2364,6 +2366,13 @@ __meta__ = {
 position = Vector2( -1629.06, -1074.86 )
 polygon = PoolVector2Array( 1641.91, 1057.52, 1649, 1066.76, 1649.53, 1077.36, 1646.89, 1085.83, 1636.29, 1094.18, 1625.3, 1095.1, 1624.06, 1105.48, 1640.62, 1103.5, 1654.83, 1092.59, 1656.82, 1083.58, 1659.49, 1075.22, 1657.97, 1062.25, 1652.67, 1052.19, 1621.99, 1044.25, 1604.11, 1054.31, 1597.75, 1068.62, 1597.89, 1085.83, 1607.18, 1097.52, 1617.26, 1104.59, 1623.98, 1105.74, 1625.03, 1094.97, 1616.56, 1092.46, 1611.53, 1086.76, 1609.14, 1075.9, 1610, 1063.39, 1624.64, 1053.65 )
 
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 2397.91, -84.519 )
+
+[connection signal="invert_controls" from="Settings" to="." method="_on_Settings_invert_controls"]
+[connection signal="menu" from="Settings" to="." method="_on_Settings_menu"]
+[connection signal="save_quit" from="Settings" to="." method="_on_Settings_save_quit"]
+[connection signal="sound_changed" from="Settings" to="." method="_on_Settings_sound_changed"]
 [connection signal="body_entered" from="credits/Goal" to="credits" method="_on_Goal_body_entered"]
 [connection signal="body_entered" from="c/Goal" to="c" method="_on_Goal_body_entered"]
 [connection signal="body_entered" from="c/Pit" to="c/Pit" method="_on_Pit_body_entered"]
