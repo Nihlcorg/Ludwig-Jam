@@ -16,8 +16,9 @@ var clock = false
 var unclock = false
 var moving = false
 var powerCharge = false
-var chargeRate = 10
+var chargeRate = 15
 var powerLim = 1000
+var rotationRate = 4
 var power = 0
 var slope = Vector2()
 var slap = Vector2()
@@ -42,23 +43,23 @@ func _unhandled_input(event):
 		unclock = false
 	if event.is_action_released("ui_right"):
 		clock = false
-	if event.is_action_pressed("ui_down"):
+	if event.is_action_pressed("ui_charge"):
 		powerCharge = true
 		pass
-	if event.is_action_released("ui_down"):
+	if event.is_action_released("ui_charge"):
 		powerCharge = false
 		get_force()
 
-func _process(delta):
+func _physics_process(delta):
 	if fallStreak > 2 : charge.set_progress_texture(meme_charge)
 	else: charge.set_progress_texture(bar_charge)
 	global_position = link.global_position
 	if clock == true && not moving:
-		if not inverted: contact.rotation_degrees += 2
-		if inverted: contact.rotation_degrees -= 2
+		if not inverted: contact.rotation_degrees += rotationRate
+		if inverted: contact.rotation_degrees -= rotationRate
 	if unclock == true && not moving:
-		if not inverted: contact.rotation_degrees -= 2
-		if inverted: contact.rotation_degrees += 2
+		if not inverted: contact.rotation_degrees -= rotationRate
+		if inverted: contact.rotation_degrees += rotationRate
 	if powerCharge == true && power < powerLim:
 		power += chargeRate
 #		print(power)
@@ -93,3 +94,15 @@ func long_sound():
 	else:
 		$AudioStreamPlayer2D.set_stream(long_fart)
 		if sounds: $AudioStreamPlayer2D.play(0.6)
+
+func change_speed(index):
+	match(index):
+		0:
+			rotationRate = 3
+			chargeRate = 20
+		1:
+			rotationRate = 2
+			chargeRate = 10
+		2:
+			rotationRate = 4
+			chargeRate = 30

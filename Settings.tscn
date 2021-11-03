@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://art/audio button.png" type="Texture" id=1]
 [ext_resource path="res://art/audio button focus.png" type="Texture" id=2]
@@ -11,9 +11,15 @@
 [ext_resource path="res://Inverter.tscn" type="PackedScene" id=9]
 [ext_resource path="res://art/menu.png" type="Texture" id=10]
 [ext_resource path="res://sounds/music_zapsplat_winter_dance.mp3" type="AudioStream" id=11]
+[ext_resource path="res://art/Fast.png" type="Texture" id=12]
+[ext_resource path="res://art/normal.png" type="Texture" id=13]
 [ext_resource path="res://art/just quit.png" type="Texture" id=14]
 [ext_resource path="res://art/save quit.png" type="Texture" id=15]
 [ext_resource path="res://Settings.gd" type="Script" id=16]
+[ext_resource path="res://art/slow.png" type="Texture" id=17]
+[ext_resource path="res://art/arrow.png" type="Texture" id=18]
+[ext_resource path="res://Settings.tres" type="Theme" id=19]
+[ext_resource path="res://art/bar speed.png" type="Texture" id=20]
 
 [node name="Settings" type="Control" groups=[
 "Persist",
@@ -23,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.396851
 margin_right = 0.396851
+rect_scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_lock_": true,
@@ -46,7 +53,9 @@ margin_left = -337.318
 margin_top = -174.155
 margin_right = -141.318
 margin_bottom = -104.155
+toggle_mode = true
 texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
 texture_focused = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
@@ -58,7 +67,9 @@ margin_left = -346.071
 margin_top = -62.1631
 margin_right = -117.071
 margin_bottom = 20.8369
+toggle_mode = true
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
 texture_focused = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true,
@@ -70,7 +81,9 @@ margin_left = -361.666
 margin_top = 69.8189
 margin_right = -132.665
 margin_bottom = 152.819
+toggle_mode = true
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
 texture_focused = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true,
@@ -117,17 +130,45 @@ margin_top = 26.1889
 margin_right = 401.169
 margin_bottom = 109.189
 
+[node name="BarLabel" type="TextureRect" parent="." groups=[
+"controls",
+]]
+margin_left = -11.3137
+margin_top = -35.3553
+margin_right = 353.686
+margin_bottom = 50.6447
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="OptionButton" parent="." groups=[
+"controls",
+]]
+margin_top = 100.0
+margin_right = 63.0
+margin_bottom = 174.0
+theme = ExtResource( 19 )
+custom_icons/arrow = ExtResource( 18 )
+items = [ "", ExtResource( 13 ), false, 0, null, "", ExtResource( 17 ), false, 1, null, "", ExtResource( 12 ), false, 2, null ]
+selected = 0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="Inverter" parent="." instance=ExtResource( 9 )]
-margin_left = -20.1842
-margin_top = -131.763
-margin_right = 308.816
-margin_bottom = -40.7629
+visible = true
+margin_left = -17.3557
+margin_top = -168.533
+margin_right = 311.645
+margin_bottom = -77.5325
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -15.0
 
-[connection signal="save_quit" from="." to="." method="_on_Settings_save_quit"]
 [connection signal="pressed" from="AudioBtn" to="." method="_on_AudioBtn_pressed"]
 [connection signal="pressed" from="ControlBtn" to="." method="_on_ControlBtn_pressed"]
 [connection signal="pressed" from="QuitBtn" to="." method="_on_QuitBtn_pressed"]
@@ -135,4 +176,5 @@ volume_db = -15.0
 [connection signal="pressed" from="savequit" to="." method="_on_savequit_pressed"]
 [connection signal="volume_changed" from="SoundBox" to="." method="setting_changed"]
 [connection signal="volume_changed" from="MusicBox" to="." method="setting_changed"]
+[connection signal="item_selected" from="Speed" to="." method="_on_Speed_item_selected"]
 [connection signal="shift" from="Inverter" to="." method="_on_Inverter_shift"]

@@ -11,9 +11,10 @@ onready var billiard = $Billiard
 onready var goalPlayer = $GoalPlayer
 onready var fallPlayer = $FallPlayer
 onready var contact = $Contact
+onready var timer = $DisplayTimer
 onready var active_level = levels[COLLISION.a]
 onready var cage = $cage
-
+onready var contactSpeed = 0
 onready var soundvolume = menu.get_soundvol()
 
 #var fall_sound = preload('res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3')
@@ -25,6 +26,7 @@ func _ready():
 #	$Flippers.follow = billiard
 #	contact.fallStreak = 5
 	contact.link = billiard
+	contact.change_speed(menu.speed.selected)
 	billiard.global_position = active_level.checkpoint.global_position
 	contact.connect('slap', billiard, 'apply_central_impulse')
 	active_level.arrive()
@@ -53,6 +55,7 @@ func move_up(level, pos):
 	current.go_away(true)
 	next.arrive()
 	if next.name == 'end':
+		$DisplayTimer.stop()
 		$Billiard/Camera2D.zoom = Vector2(1.25, 1.25)
 	active_level = next
 #	soundPlayer.set_stream(goal_sound)
@@ -73,8 +76,8 @@ func get_level(lvlName):
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_focus_next"):
 #		print('point')
-#		checkpoint()
-		cheat()
+		checkpoint()
+#		cheat()
 
 func checkpoint():
 	print('point')
@@ -106,11 +109,15 @@ func save_level():
 	var save_game = File.new()
 	save_game.open("user://savelevel.save", File.WRITE)
 	# Store the save dictionary as a new line in the save file.
-	save_game.store_line(to_json({'active_level': active_level.name}))
+	save_game.store_line(to_json({
+		'active_level': active_level.name,
+#		'millis': timer.millis,
+		'secs': timer.secs,
+		'mins': timer.mins
+		}))
 	save_game.close()
 
-# Note: This can be called from anywhere inside the tree. This function
-# is path independent.
+# %APPDATA%\Godot\ file path for save data on windows
 func load_level():
 	var save_game = File.new()
 	if not save_game.file_exists("user://savelevel.save"):
@@ -118,9 +125,10 @@ func load_level():
 
 	save_game.open("user://savelevel.save", File.READ)
 	var node_data = parse_json(save_game.get_line())
-
 	active_level = get_level(node_data["active_level"])
-
+#	timer.millis = node_data['millis']
+	timer.secs = node_data['secs']
+	timer.mins = node_data['mins']
 	save_game.close()
 
 func _on_Settings_sound_changed(vol):
@@ -138,3 +146,6 @@ func _on_Settings_invert_controls(switch):
 func _on_Settings_save_quit():
 	save_level()
 	get_tree().quit()
+
+func _on_Settings_speed_change(index):
+	contact.change_speed(index)

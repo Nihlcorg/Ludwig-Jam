@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://levels/a.png" type="Texture" id=1]
 [ext_resource path="res://level.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://levels/c.png" type="Texture" id=12]
 [ext_resource path="res://levels/g.png" type="Texture" id=13]
 [ext_resource path="res://levels/h.png" type="Texture" id=14]
+[ext_resource path="res://DisplayTimer.tscn" type="PackedScene" id=15]
 [ext_resource path="res://sounds/zapsplat_cartoon_flutter_delicate_64209.mp3" type="AudioStream" id=16]
 [ext_resource path="res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3" type="AudioStream" id=17]
 [ext_resource path="res://levels/i.png" type="Texture" id=18]
@@ -97,7 +98,7 @@ bounce = 0.5
 absorbent = true
 
 [sub_resource type="CapsuleShape2D" id=19]
-radius = 27.2169
+radius = 30.4584
 height = 0.0
 
 [sub_resource type="CircleShape2D" id=20]
@@ -172,10 +173,16 @@ height = 0.0
 [node name="PongRoot" type="Node"]
 script = ExtResource( 7 )
 
+[node name="DisplayTimer" parent="." instance=ExtResource( 15 )]
+margin_bottom = 16.0001
+
 [node name="Settings" parent="." instance=ExtResource( 29 )]
 visible = false
 margin_left = 0.0
 margin_right = 0.0
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( -821.776, 818.679 )
 
 [node name="Billiard" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2232.16, 709.775 )
@@ -186,8 +193,11 @@ continuous_cd = 2
 
 [node name="Camera2D" type="Camera2D" parent="Billiard"]
 rotation = 0.610865
+scale = Vector2( 0.75, 0.75 )
 current = true
+limit_left = 563
 limit_top = -84
+limit_right = 3830
 limit_bottom = 2057
 __meta__ = {
 "_edit_lock_": true
@@ -195,7 +205,7 @@ __meta__ = {
 
 [node name="Contact" parent="." instance=ExtResource( 9 )]
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 2203.68, 983.182 )
 rotation = 1.5708
 z_index = -1
@@ -962,7 +972,8 @@ texture = ExtResource( 14 )
 centered = false
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 layer = 8
 
@@ -995,7 +1006,7 @@ build_mode = 1
 polygon = PoolVector2Array( 128.782, 580.863, 126.704, 510.379, 139.668, 498.561, 149.091, 481.686, 157.732, 464.673, 167.8, 455.568, 181.225, 450.279, 200.443, 446.414, 226.42, 438.502, 243.338, 429.396, 255.75, 413.854, 263.982, 426.589, 263.846, 441.072, 245.228, 464.385, 222.931, 476.572, 179.485, 503.567 )
 
 [node name="Goal" type="Area2D" parent="h"]
-position = Vector2( 437.354, 920.938 )
+position = Vector2( 431.338, 912.346 )
 collision_layer = 0
 collision_mask = 0
 
@@ -2366,13 +2377,13 @@ __meta__ = {
 position = Vector2( -1629.06, -1074.86 )
 polygon = PoolVector2Array( 1641.91, 1057.52, 1649, 1066.76, 1649.53, 1077.36, 1646.89, 1085.83, 1636.29, 1094.18, 1625.3, 1095.1, 1624.06, 1105.48, 1640.62, 1103.5, 1654.83, 1092.59, 1656.82, 1083.58, 1659.49, 1075.22, 1657.97, 1062.25, 1652.67, 1052.19, 1621.99, 1044.25, 1604.11, 1054.31, 1597.75, 1068.62, 1597.89, 1085.83, 1607.18, 1097.52, 1617.26, 1104.59, 1623.98, 1105.74, 1625.03, 1094.97, 1616.56, 1092.46, 1611.53, 1086.76, 1609.14, 1075.9, 1610, 1063.39, 1624.64, 1053.65 )
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 2397.91, -84.519 )
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="invert_controls" from="Settings" to="." method="_on_Settings_invert_controls"]
 [connection signal="menu" from="Settings" to="." method="_on_Settings_menu"]
 [connection signal="save_quit" from="Settings" to="." method="_on_Settings_save_quit"]
 [connection signal="sound_changed" from="Settings" to="." method="_on_Settings_sound_changed"]
+[connection signal="speed_change" from="Settings" to="." method="_on_Settings_speed_change"]
 [connection signal="body_entered" from="credits/Goal" to="credits" method="_on_Goal_body_entered"]
 [connection signal="body_entered" from="c/Goal" to="c" method="_on_Goal_body_entered"]
 [connection signal="body_entered" from="c/Pit" to="c/Pit" method="_on_Pit_body_entered"]
