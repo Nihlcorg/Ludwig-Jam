@@ -56,7 +56,7 @@ func move_up(level, pos):
 	next.arrive()
 	if next.name == 'end':
 		$DisplayTimer.stop()
-		$Billiard/Camera2D.zoom = Vector2(1.25, 1.25)
+#		$Billiard/Camera2D.zoom = Vector2(1.25, 1.25)
 	active_level = next
 #	soundPlayer.set_stream(goal_sound)
 #	soundPlayer.set_volume_db(-2000.0)

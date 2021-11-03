@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://levels/a.png" type="Texture" id=1]
 [ext_resource path="res://level.gd" type="Script" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://levels/n.png" type="Texture" id=25]
 [ext_resource path="res://levels/o.png" type="Texture" id=26]
 [ext_resource path="res://levels/end.png" type="Texture" id=27]
+[ext_resource path="res://levels/pit.png" type="Texture" id=28]
 [ext_resource path="res://Settings.tscn" type="PackedScene" id=29]
 [ext_resource path="res://art/paper.png" type="Texture" id=30]
 
@@ -134,8 +135,8 @@ bounce = 0.5
 absorbent = true
 
 [sub_resource type="CapsuleShape2D" id=29]
-radius = 11.3181
-height = 0.0
+radius = 9.35205
+height = 32.0615
 
 [sub_resource type="CircleShape2D" id=30]
 radius = 16.6305
@@ -391,6 +392,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="a/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="start" type="Position2D" parent="a" groups=[
 "checkpoints",
 ]]
@@ -463,6 +467,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite2" type="Sprite" parent="b/Pit/CollisionShape2D"]
+rotation = -2.81173
+texture = ExtResource( 28 )
+
 [node name="start" type="Position2D" parent="b" groups=[
 "checkpoints",
 ]]
@@ -528,6 +536,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite3" type="Sprite" parent="c/Pit/CollisionShape2D"]
+rotation = -2.81173
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="c" groups=[
 "pits",
 ]]
@@ -541,6 +553,10 @@ shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite3" type="Sprite" parent="c/Pit2/CollisionShape2D"]
+rotation = -2.81173
+texture = ExtResource( 28 )
 
 [node name="start" type="Position2D" parent="c" groups=[
 "checkpoints",
@@ -612,6 +628,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="d/Pit/CollisionShape2D"]
+position = Vector2( -966.234, -706.375 )
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="d" groups=[
 "pits",
 ]]
@@ -628,6 +648,9 @@ shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="d/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="start" type="Position2D" parent="d" groups=[
 "checkpoints",
@@ -709,6 +732,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="e/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="e" groups=[
 "pits",
 ]]
@@ -723,6 +749,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="e/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit3" type="Area2D" parent="e" groups=[
 "pits",
 ]]
@@ -736,6 +765,9 @@ shape = SubResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="e/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Flipper" parent="e" instance=ExtResource( 11 )]
 position = Vector2( 539.938, 379.252 )
@@ -855,6 +887,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="f/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="start" type="Position2D" parent="f" groups=[
 "checkpoints",
 ]]
@@ -928,6 +963,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="g/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="g" groups=[
 "pits",
 ]]
@@ -942,6 +980,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="g/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit3" type="Area2D" parent="g" groups=[
 "pits",
 ]]
@@ -955,6 +996,9 @@ shape = SubResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="g/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="start" type="Position2D" parent="g" groups=[
 "checkpoints",
@@ -1031,6 +1075,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="h/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="h" groups=[
 "pits",
 ]]
@@ -1044,6 +1091,9 @@ shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="h/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Pit3" type="Area2D" parent="h" groups=[
 "pits",
@@ -1059,6 +1109,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="h/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit4" type="Area2D" parent="h" groups=[
 "pits",
 ]]
@@ -1072,6 +1125,9 @@ shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="h/Pit4/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="start" type="Position2D" parent="h" groups=[
 "checkpoints",
@@ -1155,6 +1211,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="i/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="i" groups=[
 "pits",
 ]]
@@ -1168,6 +1227,9 @@ shape = SubResource( 23 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="i/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Flipper" parent="i" instance=ExtResource( 11 )]
 position = Vector2( 126.51, 847.691 )
@@ -1262,6 +1324,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="j/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="j" groups=[
 "pits",
 ]]
@@ -1275,6 +1340,9 @@ shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="j/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Pit3" type="Area2D" parent="j" groups=[
 "pits",
@@ -1290,6 +1358,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="j/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit4" type="Area2D" parent="j" groups=[
 "pits",
 ]]
@@ -1304,6 +1375,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="j/Pit4/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit5" type="Area2D" parent="j" groups=[
 "pits",
 ]]
@@ -1317,6 +1391,9 @@ shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="j/Pit5/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Flipper" parent="j" instance=ExtResource( 11 )]
 position = Vector2( 497.739, 240.095 )
@@ -1338,7 +1415,6 @@ texture = ExtResource( 21 )
 centered = false
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 layer = 11
@@ -1399,6 +1475,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="k/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="k" groups=[
 "pits",
 ]]
@@ -1412,6 +1491,9 @@ shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="k/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Pit3" type="Area2D" parent="k" groups=[
 "pits",
@@ -1427,6 +1509,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="k/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit4" type="Area2D" parent="k" groups=[
 "pits",
 ]]
@@ -1440,6 +1525,9 @@ shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="k/Pit4/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Flipper" parent="k" instance=ExtResource( 11 )]
 position = Vector2( 116.261, 877.325 )
@@ -1464,11 +1552,13 @@ snap_angle = 45
 [node name="Flipper5" parent="k" instance=ExtResource( 11 )]
 position = Vector2( 206.166, 488.814 )
 rotation = 0.349066
+snap_time = 0.15
 snap_angle = -90
 
 [node name="Flipper6" parent="k" instance=ExtResource( 11 )]
 position = Vector2( 178.054, 481.729 )
 rotation = -1.0472
+snap_time = 0.15
 snap_angle = -90
 
 [node name="start" type="Position2D" parent="k" groups=[
@@ -1486,7 +1576,6 @@ texture = ExtResource( 23 )
 centered = false
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 layer = 12
@@ -1503,12 +1592,12 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="l/Walls"]
 position = Vector2( -0.667419, -1.33484 )
 build_mode = 1
-polygon = PoolVector2Array( 124.808, 84.317, 139.079, 119.993, 191.404, 171.129, 220.54, 205.022, 246.409, 225.133, 229.011, 251.511, 200.918, 272.212, 159.89, 321.564, 145.671, 366.057, 153.795, 453.202, 173.241, 493.507, 206.433, 509.427, 257.505, 508.024, 315.873, 508.585, 349.827, 513.917, 359.368, 533.841, 396.372, 546.367, 420.626, 550.461, 470.078, 572.51, 487.167, 605.835, 435.667, 664.335, 426.167, 701.835, 451.667, 733.835, 498.167, 742.835, 438.167, 803.335, 394.667, 782.335, 360.167, 719.335, 334.006, 580.7, 179.251, 555.026, 107.48, 550.783, 99.7156, 449.117, -3.04936, 188.384, -0.220932, 46.963, -0.395997, 0.714479, 125.802, 1.50818, 181.758, 0.714479, 237.007, 1.55073, 312.566, 1.2944, 255.178, 122.451, 227.778, 87.8032, 212.904, 52.6698, 199.396, 31.7454, 139.272, 37.3076, 121.167, 72.3348 )
+polygon = PoolVector2Array( 124.808, 84.317, 139.079, 119.993, 191.404, 171.129, 220.54, 205.022, 246.409, 225.133, 229.011, 251.511, 200.918, 272.212, 159.89, 321.564, 145.671, 366.057, 153.795, 453.202, 173.241, 493.507, 206.433, 509.427, 257.505, 508.024, 315.873, 508.585, 349.827, 513.917, 359.368, 533.841, 396.372, 546.367, 420.626, 550.461, 470.078, 572.51, 487.167, 605.835, 435.667, 664.335, 426.167, 701.835, 451.667, 733.835, 498.167, 742.835, 451.369, 1009.47, 58.0876, 919.861, -58.8927, 772.963, -52.0909, 706.832, -49.2626, 651.678, -43.6058, 544.197, -20.9784, 421.161, -3.04936, 188.384, -0.220932, 46.963, -0.395997, 0.714479, 125.802, 1.50818, 181.758, 0.714479, 237.007, 1.55073, 312.566, 1.2944, 255.178, 122.451, 227.778, 87.8032, 212.904, 52.6698, 199.396, 31.7454, 139.272, 37.3076, 121.167, 72.3348 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="l/Walls"]
 position = Vector2( 0, -2.66968 )
 build_mode = 1
-polygon = PoolVector2Array( 325.117, 316.358, 319.447, 334.381, 281.594, 340.178, 264.378, 353.687, 261.994, 370.638, 286.097, 394.211, 323.708, 392.887, 372.708, 401.098, 429.654, 407.454, 459.849, 399.508, 475.5, 410.42, 489.25, 430.92, 484.5, 449.92, 445.75, 452.17, 502, 475.42, 526.236, 526.445, 556.397, 601.668, 566.297, 639.345, 562.586, 670.972, 549.946, 709.805, 523.783, 734.778, 487.215, 742.806, 436.079, 804.644, 559.757, 774.617, 590.379, 732.4, 600.894, 677.653, 598.442, 619.747, 600.544, 563.407, 600.58, 449.678, 601.247, 377.597, 593, 5.66968, 313, -1.33032, 255, 121.67, 302.71, 161.326, 354.623, 188.227, 379.636, 200.969, 398.985, 211.823, 418.039, 227.591, 439.366, 251.162, 447.785, 278.663, 442.734, 309.531, 424.213, 342.643, 417.735, 360.308, 410.319, 377.525, 390.984, 383.881, 354.529, 374.22, 347.988, 357.571, 352.745, 352.814, 355.675, 328.567, 348.286, 304.354, 335.204, 303.462 )
+polygon = PoolVector2Array( 325.117, 316.358, 319.447, 334.381, 281.594, 340.178, 264.378, 353.687, 261.994, 370.638, 286.097, 394.211, 323.708, 392.887, 372.708, 401.098, 429.654, 407.454, 459.849, 399.508, 475.5, 410.42, 489.25, 430.92, 484.5, 449.92, 445.75, 452.17, 502, 475.42, 526.236, 526.445, 556.397, 601.668, 566.297, 639.345, 562.586, 670.972, 549.946, 709.805, 523.783, 734.778, 487.215, 742.806, 429.489, 1003.74, 572.324, 1024.95, 628.893, 756.25, 640.206, 691.196, 623.236, 621.9, 617.579, 573.817, 600.58, 449.678, 601.247, 377.597, 593, 5.66968, 313, -1.33032, 255, 121.67, 302.71, 161.326, 354.623, 188.227, 379.636, 200.969, 398.985, 211.823, 418.039, 227.591, 439.366, 251.162, 447.785, 278.663, 442.734, 309.531, 424.213, 342.643, 417.735, 360.308, 410.319, 377.525, 390.984, 383.881, 354.529, 374.22, 347.988, 357.571, 352.745, 352.814, 355.675, 328.567, 348.286, 304.354, 335.204, 303.462 )
 
 [node name="Goal" type="Area2D" parent="l"]
 position = Vector2( 491.147, 675.294 )
@@ -1535,6 +1624,9 @@ shape = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="l/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Pit2" type="Area2D" parent="l" groups=[
 "pits",
@@ -1564,6 +1656,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="l/Pit3/CollisionShape2D"]
+position = Vector2( -966.234, -706.375 )
+texture = ExtResource( 28 )
+
 [node name="Pit5" type="Area2D" parent="l" groups=[
 "pits",
 ]]
@@ -1581,7 +1677,7 @@ __meta__ = {
 [node name="Pit7" type="Area2D" parent="l" groups=[
 "pits",
 ]]
-position = Vector2( 188.817, 597.691 )
+position = Vector2( 179.908, 587.446 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1595,7 +1691,7 @@ __meta__ = {
 [node name="Pit8" type="Area2D" parent="l" groups=[
 "pits",
 ]]
-position = Vector2( 222.49, 598.813 )
+position = Vector2( 234.517, 589.013 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1609,7 +1705,7 @@ __meta__ = {
 [node name="Pit6" type="Area2D" parent="l" groups=[
 "pits",
 ]]
-position = Vector2( 470.615, 947.609 )
+position = Vector2( 471.95, 940.935 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1651,7 +1747,7 @@ __meta__ = {
 [node name="Pit11" type="Area2D" parent="l" groups=[
 "pits",
 ]]
-position = Vector2( 102.357, 789.35 )
+position = Vector2( 106.192, 806.036 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1665,7 +1761,7 @@ __meta__ = {
 [node name="Pit12" type="Area2D" parent="l" groups=[
 "pits",
 ]]
-position = Vector2( 79.7874, 815.341 )
+position = Vector2( 75.6186, 823.024 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1679,7 +1775,7 @@ __meta__ = {
 [node name="Pit13" type="Area2D" parent="l" groups=[
 "pits",
 ]]
-position = Vector2( 58.5741, 789.178 )
+position = Vector2( 74.4891, 785.524 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1704,14 +1800,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="l/Pit4/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Flipper" parent="l" instance=ExtResource( 11 )]
-position = Vector2( 332.207, 299.585 )
+position = Vector2( 332.207, 298.087 )
 rotation = -2.44346
+snap_time = 0.2
 snap_angle = 140
 
 [node name="Flipper2" parent="l" instance=ExtResource( 11 )]
 position = Vector2( 251.881, 362.366 )
 rotation = 3.14159
+snap_time = 0.2
 snap_angle = -110
 
 [node name="Flipper3" parent="l" instance=ExtResource( 11 )]
@@ -1783,6 +1884,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="m/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="m" groups=[
 "pits",
 ]]
@@ -1797,6 +1901,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="m/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit3" type="Area2D" parent="m" groups=[
 "pits",
 ]]
@@ -1810,6 +1917,9 @@ shape = SubResource( 27 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="m/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Pit4" type="Area2D" parent="m" groups=[
 "pits",
@@ -1828,7 +1938,7 @@ __meta__ = {
 [node name="Pit5" type="Area2D" parent="m" groups=[
 "pits",
 ]]
-position = Vector2( 54.6922, 783.128 )
+position = Vector2( 65.3709, 781.793 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1864,16 +1974,19 @@ snap_angle = -70
 [node name="Flipper2" parent="m" instance=ExtResource( 11 )]
 position = Vector2( 116.192, 527.289 )
 rotation = 0.785398
+snap_time = 0.2
 
 [node name="Flipper3" parent="m" instance=ExtResource( 11 )]
 position = Vector2( 117.995, 677.885 )
 rotation = 1.0472
+snap_time = 0.2
 snap_angle = -90
 
 [node name="Flipper4" parent="m" instance=ExtResource( 11 )]
 position = Vector2( 247.651, 766.513 )
-rotation = 4.71239
-snap_angle = -120
+rotation = 4.18879
+snap_time = 0.2
+snap_angle = -100
 
 [node name="Flipper5" parent="m" instance=ExtResource( 11 )]
 position = Vector2( 568.107, 278.542 )
@@ -1898,7 +2011,6 @@ texture = ExtResource( 25 )
 centered = false
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 layer = 14
@@ -1915,7 +2027,7 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="n/Walls"]
 position = Vector2( -0.667419, -1.33484 )
 build_mode = 1
-polygon = PoolVector2Array( 208.249, 674.788, 512.846, 661.409, 521.765, 591.246, 518.197, 575.191, 524.143, 547.84, 519.386, 502.055, 524.738, 456.865, 490.251, 343.296, 445.655, 309.403, 304.734, 226.753, 301.167, 161.347, 412.358, 154.806, 438.52, 164.32, 494.413, 153.617, 562.198, 151.239, 568.144, 84.6429, 576.468, 63.8318, 569.333, 45.3992, 392.141, 41.2369, 321.978, 48.9667, 284.518, 31.1285, 231.003, 25.1824, 175.705, 33.5069, 144.191, 50.1558, 119.218, 92.3727, -0.297272, 98.9133, -1.48648, -1.57471, 604.414, -1.57471, 599.959, 1041.5, 221.532, 1041.5, 224.202, 883.325, 317.641, 887.33, 477.154, 951.402, 507.855, 950.067, 536.554, 958.744, 560.581, 948.065, 569.258, 930.712, 567.256, 903.348, 521.204, 866.64, 463.138, 853.291, 421.758, 847.952, 355.749, 817.288, 329.749, 791.788, 325.249, 766.288, 306.249, 740.788, 262.249, 737.788, 233.749, 728.288, 214.749, 702.788 )
+polygon = PoolVector2Array( 208.249, 674.788, 512.846, 661.409, 521.765, 591.246, 518.197, 575.191, 524.143, 547.84, 519.386, 502.055, 524.738, 456.865, 490.251, 343.296, 445.655, 309.403, 304.734, 226.753, 295.552, 212.125, 297.888, 200.445, 296.553, 173.081, 304.896, 159.732, 338.76, 155.504, 412.065, 155.174, 438.52, 164.32, 494.413, 153.617, 562.198, 151.239, 568.144, 84.6429, 576.468, 63.8318, 569.333, 45.3992, 392.141, 41.2369, 321.978, 48.9667, 284.518, 31.1285, 231.003, 25.1824, 175.705, 33.5069, 144.191, 50.1558, 119.218, 92.3727, -0.297272, 98.9133, -1.48648, -1.57471, 604.414, -1.57471, 599.959, 1041.5, 221.532, 1041.5, 224.202, 883.325, 317.641, 887.33, 477.154, 951.402, 507.855, 950.067, 536.554, 958.744, 560.581, 948.065, 569.258, 930.712, 567.256, 903.348, 521.204, 866.64, 463.138, 853.291, 421.758, 847.952, 355.749, 817.288, 329.749, 791.788, 325.249, 766.288, 306.249, 740.788, 262.249, 737.788, 233.749, 728.288, 214.749, 702.788 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="n/Walls"]
 position = Vector2( 0, -2.66968 )
@@ -1923,12 +2035,12 @@ build_mode = 1
 polygon = PoolVector2Array( 222.874, 1042.09, 226.023, 886.495, 178.776, 885.865, 179.406, 823.499, 47.7446, 820.979, 55.9341, 724.595, 71.8329, 690.301, 77.8397, 659.599, 90.5207, 635.572, 187.964, 570.165, 259.378, 526.782, 270.724, 492.076, 273.394, 465.379, 74.5026, 466.047, 73.8352, 366.601, 70.1806, 333.201, 87.8583, 244.106, 95.6365, 205.215, 93.5152, 176.224, 118.971, 90.6636, -4.06558, 98.4418, -1.35623, 1044.2 )
 
 [node name="Goal" type="Area2D" parent="n"]
-position = Vector2( 490.339, 103.29 )
+position = Vector2( 485.339, 100.29 )
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="n/Goal"]
-rotation = -1.71391
+rotation = -1.5865
 shape = SubResource( 29 )
 __meta__ = {
 "_edit_lock_": true
@@ -1937,7 +2049,7 @@ __meta__ = {
 [node name="Pit" type="Area2D" parent="n" groups=[
 "pits",
 ]]
-position = Vector2( 413.218, 119.89 )
+position = Vector2( 413.468, 133.89 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 5 )
@@ -1947,6 +2059,10 @@ shape = SubResource( 30 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="n/Pit/CollisionShape2D"]
+position = Vector2( -966.234, -706.375 )
+texture = ExtResource( 28 )
 
 [node name="Pit2" type="Area2D" parent="n" groups=[
 "pits",
@@ -1962,6 +2078,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="n/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit3" type="Area2D" parent="n" groups=[
 "pits",
 ]]
@@ -1975,6 +2094,9 @@ shape = SubResource( 30 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="n/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Pit4" type="Area2D" parent="n" groups=[
 "pits",
@@ -1990,6 +2112,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="n/Pit4/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit5" type="Area2D" parent="n" groups=[
 "pits",
 ]]
@@ -2003,6 +2128,9 @@ shape = SubResource( 30 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="n/Pit5/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="start" type="Position2D" parent="n"]
 position = Vector2( 528.856, 917.304 )
@@ -2028,24 +2156,27 @@ rotation = 1.74533
 snap_angle = 90
 
 [node name="Flipper5" parent="n" instance=ExtResource( 11 )]
-position = Vector2( 280.903, 448.031 )
+position = Vector2( 280.903, 447.715 )
 rotation = -2.44346
+snap_time = 0.2
 snap_angle = 90
 
 [node name="Flipper6" parent="n" instance=ExtResource( 11 )]
-position = Vector2( 392.454, 308.149 )
+position = Vector2( 392.454, 307.205 )
 rotation = 3.83972
+snap_time = 0.2
 snap_angle = -90
 
 [node name="Flipper7" parent="n" instance=ExtResource( 11 )]
 position = Vector2( 330.936, 44.7522 )
 rotation = 1.5708
+snap_time = 0.2
 snap_angle = -90
 
 [node name="Flipper4" parent="n" instance=ExtResource( 11 )]
-position = Vector2( 66.4895, 389.886 )
+position = Vector2( 65.8949, 378.588 )
 rotation = 1.5708
-snap_angle = -90
+snap_angle = -100
 
 [node name="o" type="Sprite" parent="." groups=[
 "levels",
@@ -2107,6 +2238,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="o/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit2" type="Area2D" parent="o" groups=[
 "pits",
 ]]
@@ -2120,6 +2254,9 @@ shape = SubResource( 33 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="o/Pit2/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Pit3" type="Area2D" parent="o" groups=[
 "pits",
@@ -2135,6 +2272,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="o/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit4" type="Area2D" parent="o" groups=[
 "pits",
 ]]
@@ -2149,6 +2289,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="o/Pit4/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit5" type="Area2D" parent="o" groups=[
 "pits",
 ]]
@@ -2162,6 +2305,9 @@ shape = SubResource( 33 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="o/Pit5/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="start" type="Position2D" parent="o"]
 position = Vector2( 475.044, 90.0999 )
@@ -2267,6 +2413,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="pitSprite" type="Sprite" parent="q/Pit/CollisionShape2D"]
+texture = ExtResource( 28 )
+
 [node name="Pit3" type="Area2D" parent="q" groups=[
 "pits",
 ]]
@@ -2280,6 +2429,9 @@ shape = SubResource( 36 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="pitSprite" type="Sprite" parent="q/Pit3/CollisionShape2D"]
+texture = ExtResource( 28 )
 
 [node name="Flipper2" parent="q" instance=ExtResource( 11 )]
 position = Vector2( 337.184, 363.411 )
