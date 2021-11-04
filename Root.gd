@@ -14,17 +14,17 @@ onready var contact = $Contact
 onready var timer = $DisplayTimer
 onready var active_level = levels[COLLISION.a]
 onready var cage = $cage
-onready var contactSpeed = 0
 onready var soundvolume = menu.get_soundvol()
 
-#var fall_sound = preload('res://sounds/zapsplat_cartoon_descend_wobble_low_pitched_71601.mp3')
-#var goal_sound = preload('res://sounds/zapsplat_cartoon_flutter_delicate_64209.mp3')
+# record time variables
+onready var contactSpeed = 0
+onready var pbMin = 0
+onready var pbSec = 0
 
 func _ready():
 	load_level()
+	load_times()
 	menu.load2()
-#	$Flippers.follow = billiard
-#	contact.fallStreak = 5
 	contact.link = billiard
 	contact.change_speed(menu.speed.selected)
 	billiard.global_position = active_level.checkpoint.global_position
@@ -41,7 +41,6 @@ func move_down(level, pos):
 	current.go_away(false)
 	next.arrive()
 	active_level = next
-#	soundPlayer.set_stream(fall_sound)
 	if soundvolume > 0:
 		fallPlayer.play()
 	contact.fallStreak += 1
@@ -55,16 +54,13 @@ func move_up(level, pos):
 	current.go_away(true)
 	next.arrive()
 	if next.name == 'end':
-		$DisplayTimer.stop()
-#		$Billiard/Camera2D.zoom = Vector2(1.25, 1.25)
+		timer.stop()
+		compare_times()
 	active_level = next
-#	soundPlayer.set_stream(goal_sound)
-#	soundPlayer.set_volume_db(-2000.0)
 	if soundvolume > 0:
 		goalPlayer.play()
 	contact.fallStreak = 0
 #	print(soundPlayer.get_volume_db())	
-#	soundPlayer.set_volume_db(0.0)
 	print('next '+ next.name)
 	print(pos)
  
@@ -73,9 +69,19 @@ func get_level(lvlName):
 		if level.name == lvlName:
 			return level
 
+func compare_times():
+	if timer.mins < pbMin:
+		print('pb')
+		save_times()
+	elif timer.mins == pbMin && timer.secs < pbSec:
+		save_times()
+		print('pb')
+	elif pbMin == 0 && pbSec == 0:
+		print('pb')
+		save_times()
+
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_focus_next"):
-#		print('point')
 		checkpoint()
 #		cheat()
 
@@ -105,7 +111,7 @@ func _on_Settings_menu(on):
 # Go through everything in the persist category and ask them to return a
 # dict of relevant variables.
 func save_level():
-	print('save level')
+#	print('save level')
 	var save_game = File.new()
 	save_game.open("user://savelevel.save", File.WRITE)
 	# Store the save dictionary as a new line in the save file.
@@ -116,6 +122,33 @@ func save_level():
 		'mins': timer.mins
 		}))
 	save_game.close()
+
+func save_times():
+	pbMin = timer.mins
+	pbSec = timer.secs
+	var save_game = File.new()
+	save_game.open("user://savetimes.save", File.WRITE)
+	save_game.store_line(to_json({
+		'pbMin' : timer.mins,
+		'pbSec' : timer.secs,
+	}))
+	save_game.close()
+
+func load_times():
+	var save_game = File.new()
+	if not save_game.file_exists("user://savetimes.save"):
+		pbMin = 0
+		pbSec = 0
+		return # Error! We don't have a save to load.
+	print('file')
+	save_game.open("user://savetimes.save", File.READ)
+	var node_data = parse_json(save_game.get_line())
+	
+	pbMin = node_data['pbMin']
+	pbSec = node_data['pbSec']
+	
+	save_game.close()
+	timer.set_pb(pbMin, pbSec)
 
 # %APPDATA%\Godot\ file path for save data on windows
 func load_level():

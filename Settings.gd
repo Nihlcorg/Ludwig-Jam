@@ -17,7 +17,7 @@ signal save_quit()
 # Go through everything in the persist category and ask them to return a
 # dict of relevant variables.
 func save_game():
-	print('save')
+#	print('save')
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
@@ -83,7 +83,7 @@ func load2():
 	if music.volume > 0: $MusicPlayer.play()
 
 func setting_changed():
-	print('change')
+#	print('change')
 	if music.volume > 0: 
 		if not $MusicPlayer.is_playing():
 			$MusicPlayer.play()
@@ -126,4 +126,7 @@ func _on_Settings_save_quit():
 func _on_Speed_item_selected(index):
 	emit_signal("speed_change", index)
 	save_game()
-	pass # Replace with function body.
+
+func _on_reset_pressed():
+	var dir = Directory.new()
+	dir.remove("user://savelevel.save")

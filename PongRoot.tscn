@@ -117,7 +117,7 @@ height = 11.5343
 radius = 16.6305
 
 [sub_resource type="CircleShape2D" id=24]
-radius = 14.7823
+radius = 10.8109
 
 [sub_resource type="PhysicsMaterial" id=25]
 bounce = 0.5
@@ -1800,9 +1800,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pitSprite" type="Sprite" parent="l/Pit4/CollisionShape2D"]
-texture = ExtResource( 28 )
-
 [node name="Flipper" parent="l" instance=ExtResource( 11 )]
 position = Vector2( 332.207, 298.087 )
 rotation = -2.44346
@@ -2528,8 +2525,6 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cage"]
 position = Vector2( -1629.06, -1074.86 )
 polygon = PoolVector2Array( 1641.91, 1057.52, 1649, 1066.76, 1649.53, 1077.36, 1646.89, 1085.83, 1636.29, 1094.18, 1625.3, 1095.1, 1624.06, 1105.48, 1640.62, 1103.5, 1654.83, 1092.59, 1656.82, 1083.58, 1659.49, 1075.22, 1657.97, 1062.25, 1652.67, 1052.19, 1621.99, 1044.25, 1604.11, 1054.31, 1597.75, 1068.62, 1597.89, 1085.83, 1607.18, 1097.52, 1617.26, 1104.59, 1623.98, 1105.74, 1625.03, 1094.97, 1616.56, 1092.46, 1611.53, 1086.76, 1609.14, 1075.9, 1610, 1063.39, 1624.64, 1053.65 )
-
-[node name="Timer" type="Timer" parent="."]
 
 [connection signal="invert_controls" from="Settings" to="." method="_on_Settings_invert_controls"]
 [connection signal="menu" from="Settings" to="." method="_on_Settings_menu"]

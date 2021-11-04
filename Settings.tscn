@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://art/audio button.png" type="Texture" id=1]
 [ext_resource path="res://art/audio button focus.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://art/arrow.png" type="Texture" id=18]
 [ext_resource path="res://Settings.tres" type="Theme" id=19]
 [ext_resource path="res://art/bar speed.png" type="Texture" id=20]
+[ext_resource path="res://art/deletesave.png" type="Texture" id=21]
 
 [node name="Settings" type="Control" groups=[
 "Persist",
@@ -94,10 +95,10 @@ __meta__ = {
 "quit",
 ]]
 visible = false
-margin_left = 25.4218
-margin_top = 28.4519
-margin_right = 260.422
-margin_bottom = 131.452
+margin_left = 32.9643
+margin_top = -45.0872
+margin_right = 267.965
+margin_bottom = 57.9129
 texture_normal = ExtResource( 14 )
 __meta__ = {
 "_edit_lock_": true,
@@ -108,11 +109,25 @@ __meta__ = {
 "quit",
 ]]
 visible = false
-margin_left = 29.6648
-margin_top = -139.13
-margin_right = 264.665
-margin_bottom = -36.1301
+margin_left = -86.3008
+margin_top = -182.499
+margin_right = 148.699
+margin_bottom = -79.4993
 texture_normal = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="reset" type="TextureButton" parent="." groups=[
+"quit",
+]]
+visible = false
+margin_left = 139.973
+margin_top = 89.0298
+margin_right = 374.974
+margin_bottom = 192.03
+texture_normal = ExtResource( 21 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -133,6 +148,7 @@ margin_bottom = 109.189
 [node name="BarLabel" type="TextureRect" parent="." groups=[
 "controls",
 ]]
+visible = false
 margin_left = -11.3137
 margin_top = -35.3553
 margin_right = 353.686
@@ -146,11 +162,13 @@ __meta__ = {
 [node name="Speed" type="OptionButton" parent="." groups=[
 "controls",
 ]]
+visible = false
 margin_top = 100.0
 margin_right = 63.0
 margin_bottom = 174.0
 theme = ExtResource( 19 )
 custom_icons/arrow = ExtResource( 18 )
+icon = ExtResource( 13 )
 items = [ "", ExtResource( 13 ), false, 0, null, "", ExtResource( 17 ), false, 1, null, "", ExtResource( 12 ), false, 2, null ]
 selected = 0
 __meta__ = {
@@ -159,7 +177,6 @@ __meta__ = {
 }
 
 [node name="Inverter" parent="." instance=ExtResource( 9 )]
-visible = true
 margin_left = -17.3557
 margin_top = -168.533
 margin_right = 311.645
@@ -174,6 +191,7 @@ volume_db = -15.0
 [connection signal="pressed" from="QuitBtn" to="." method="_on_QuitBtn_pressed"]
 [connection signal="pressed" from="justquit" to="." method="_on_justquit_pressed"]
 [connection signal="pressed" from="savequit" to="." method="_on_savequit_pressed"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="volume_changed" from="SoundBox" to="." method="setting_changed"]
 [connection signal="volume_changed" from="MusicBox" to="." method="setting_changed"]
 [connection signal="item_selected" from="Speed" to="." method="_on_Speed_item_selected"]
