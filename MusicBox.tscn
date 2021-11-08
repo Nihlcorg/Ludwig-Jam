@@ -23,6 +23,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+audio_bus_name = "MusicBus"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 229.0
@@ -38,8 +39,9 @@ custom_icons/grabber = ExtResource( 1 )
 custom_styles/slider = SubResource( 1 )
 custom_styles/grabber_area_highlight = SubResource( 2 )
 custom_styles/grabber_area = SubResource( 3 )
-step = 25.0
-value = 50.0
+max_value = 2.0
+step = 0.05
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

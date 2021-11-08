@@ -2509,10 +2509,12 @@ __meta__ = {
 [node name="GoalPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 volume_db = -15.0
+bus = "SoundBus"
 
 [node name="FallPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 volume_db = -15.0
+bus = "SoundBus"
 
 [node name="cage" type="StaticBody2D" parent="."]
 collision_layer = 2

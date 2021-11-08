@@ -20,6 +20,7 @@ func save():
 
 func _ready():
 	volume = get_volume()
+	mod_bus(volume)
 
 func set_volume(vol):
 	slider.value = vol
@@ -28,4 +29,18 @@ func get_volume():
 	return slider.value
 
 func _on_Slider_value_changed(value):
+	mod_bus(value)
 	emit_signal("volume_changed")
+
+export var audio_bus_name := "Master"
+
+onready var _bus := AudioServer.get_bus_index(audio_bus_name)
+
+#func _ready() -> void:
+#	value = db2linear(AudioServer.get_bus_volume_db(_bus))
+
+func mod_bus(value: float):
+	AudioServer.set_bus_volume_db(_bus, linear2db(value))
+
+func _on_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(_bus, linear2db(value))

@@ -185,6 +185,7 @@ margin_bottom = -77.5325
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -15.0
+bus = "MusicBus"
 
 [connection signal="pressed" from="AudioBtn" to="." method="_on_AudioBtn_pressed"]
 [connection signal="pressed" from="ControlBtn" to="." method="_on_ControlBtn_pressed"]
