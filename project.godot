@@ -10,14 +10,14 @@ config_version=4
 
 [application]
 
-config/name="lud_jam_test"
+config/name="Super Ball Struggle"
 run/main_scene="res://PongRoot.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
 Settings="*res://Settings.tscn"
-Global="*res://Global.tscn"
 
 [input]
 

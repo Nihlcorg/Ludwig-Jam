@@ -18,6 +18,8 @@ func save():
 	}
 	return save_dict
 
+func _ready():
+	volume = get_volume()
 
 func set_volume(vol):
 	slider.value = vol

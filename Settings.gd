@@ -12,6 +12,7 @@ signal invert_controls()
 signal speed_change(index)
 signal save_quit()
 
+
 # Note: This can be called from anywhere inside the tree. This function is
 # path independent.
 # Go through everything in the persist category and ask them to return a
@@ -70,6 +71,7 @@ func save2():
 func load2():
 	var save_game = File.new()
 	if not save_game.file_exists("user://savegame.save"):
+		vol_check()
 		return # Error! We don't have a save to load.
 	save_game.open("user://savegame.save", File.READ)
 	while save_game.get_position() < save_game.get_len():
@@ -80,16 +82,19 @@ func load2():
 		inverter.set_pressed(node_data["inverter"])
 		speed.select(node_data['speed'])
 	save_game.close()
-	if music.volume > 0: $MusicPlayer.play()
+	vol_check()
 
 func setting_changed():
 #	print('change')
+	vol_check()
+	emit_signal("sound_changed", sound.volume)
+	save_game()
+
+func vol_check():
 	if music.volume > 0: 
 		if not $MusicPlayer.is_playing():
 			$MusicPlayer.play()
 	else: $MusicPlayer.stop()
-	emit_signal("sound_changed", sound.volume)
-	save_game()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
